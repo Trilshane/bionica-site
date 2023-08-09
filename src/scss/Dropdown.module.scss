@@ -1,0 +1,42 @@
+.container {
+  width: 261px;
+  color: #000;
+  position: relative;
+  .dropdownBtn {
+    box-sizing: border-box;
+    padding: 10px;
+    height: 62px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    .text {
+      padding: 0;
+      margin: 0;
+    }
+    .btn {
+      color: red;
+      position: absolute;
+      right: 5%;
+      transition: 0.2s;
+    }
+  }
+  .dropdownContent {
+    position: absolute;
+    top: 110%;
+    padding: 10px;
+    background-color: #fff;
+    width: 95%;
+    transition: all 0.2s;
+    height: 300px;
+    overflow-y: scroll;
+    .dropdownItem {
+      padding: 10px;
+      cursor: pointer;
+      &:hover {
+        background-color: #f4f4f4;
+      }
+    }
+  }
+}

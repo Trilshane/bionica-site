@@ -1,0 +1,57 @@
+.bgContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: -170px;
+  width: 100%;
+  min-height: 700px;
+  background-image: url(../images/delivery-bg.jpg);
+  background-size: 100% 100%;
+  padding: 220px 0 255px;
+  z-index: inherit;
+  .container {
+    margin: 0 15%;
+    .headMenu {
+      display: flex;
+      align-items: center;
+      .headMenuElement {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        margin-right: 10px;
+        .icon {
+          margin-right: 5px;
+        }
+      }
+    }
+    .title {
+      font-size: 46px;
+      font-weight: 200;
+      .bold {
+        font-weight: 900;
+      }
+    }
+    .iconsContainer {
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+      .iconContainer {
+        width: 200px;
+        height: 57px;
+        border: 15px solid rgba($color: gray, $alpha: 0.2);
+        border-radius: 5px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .textContent {
+      font-size: 26px;
+      font-weight: 400;
+      .bold {
+        font-weight: 900;
+      }
+    }
+  }
+}

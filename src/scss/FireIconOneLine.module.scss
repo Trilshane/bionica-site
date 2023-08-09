@@ -1,0 +1,14 @@
+.titleIcon {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 55%;
+    left: 1.7%;
+    width: 61px;
+    height: 1px;
+    background: #efc11c;
+  }
+}

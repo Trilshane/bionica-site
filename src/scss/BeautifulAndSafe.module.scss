@@ -1,0 +1,58 @@
+.bgContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: -170px;
+  width: 100%;
+  min-height: 900px;
+  background-image: url(../images/catalog-bg.jpg);
+  background-size: 100% 100%;
+  padding: 220px 0 255px;
+  z-index: inherit;
+  .container {
+    margin: 0 15%;
+    .headMenu {
+      display: flex;
+      align-items: center;
+      .headMenuElement {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        margin-right: 10px;
+        .icon {
+          margin-right: 5px;
+        }
+      }
+    }
+    .contentContainer {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      width: 115%;
+
+      .contentElem {
+        .title {
+          font-size: 46px;
+          font-weight: 900;
+        }
+        .firstContent {
+          font-size: 25px;
+        }
+        .secondContent {
+          font-size: 21px;
+          width: 80%;
+        }
+      }
+    }
+    .formContainer {
+      .title {
+        font-size: 24px;
+        font-weight: 400;
+        .bold {
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}

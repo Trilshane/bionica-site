@@ -1,0 +1,14 @@
+.container {
+  z-index: 2;
+  .form {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    .input {
+      width: 261px;
+      height: 62px;
+      box-sizing: border-box;
+      padding: 15px 30px;
+    }
+  }
+}

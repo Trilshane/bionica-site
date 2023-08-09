@@ -1,0 +1,106 @@
+.container {
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  color: #000;
+  .modalWindow {
+    width: 1100px;
+    min-height: 750px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    .closeButton {
+      position: absolute;
+      left: 95%;
+      top: 3%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 30px;
+      transition: 0.6s;
+      color: gray;
+      &:hover {
+        color: #000;
+      }
+    }
+    .modalWindowContent {
+      display: flex;
+      justify-content: space-between;
+      margin: 90px 50px;
+
+      .modalWindowLeftContent {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .guarantee {
+          .guaranteeContent {
+            .bold {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      .modalWindowRightContent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-left: 45px;
+        width: 50%;
+        .title {
+          font-size: 36px;
+          font-weight: 200;
+          margin: 0;
+          padding: 0;
+        }
+        .about {
+          font-size: 16px;
+          font-weight: 400px;
+          .bold {
+            font-weight: 700;
+          }
+        }
+        .characteristics {
+          .bold {
+            font-weight: 700;
+          }
+        }
+        .priceZone {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 80%;
+          .existence {
+            .existenceContent {
+              padding: 0;
+              margin: 0;
+            }
+            .vendorCode {
+              padding: 0;
+              margin: 0;
+              font-weight: 700;
+            }
+          }
+          .price {
+            .bold {
+              font-weight: 800;
+              font-size: 36px;
+              margin-right: 5px;
+            }
+          }
+        }
+        .otherModels {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

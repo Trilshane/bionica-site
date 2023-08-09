@@ -1,0 +1,64 @@
+.bgContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: -300px;
+  width: 100%;
+  min-height: 900px;
+  background-image: url(../images/answers-bg.png);
+  background-size: 100% 100%;
+  padding: 220px 0 255px;
+  z-index: 2;
+  .container {
+    margin: 0 15%;
+    .headMenu {
+      display: flex;
+      align-items: center;
+      .headMenuElement {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        margin-right: 10px;
+        .icon {
+          margin-right: 5px;
+        }
+      }
+    }
+    .title {
+      font-size: 46px;
+      font-weight: 200;
+      .bold {
+        font-weight: 900;
+      }
+    }
+    .answerContainer {
+      margin-top: 35px;
+      display: flex;
+      justify-content: space-between;
+      .answersColumn {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .buttonsContainer {
+      margin-top: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .buttonsTitle {
+        font-size: 40px;
+        font-weight: 300;
+        .bold {
+          font-weight: 900;
+        }
+      }
+      .buttons {
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+      }
+    }
+  }
+}

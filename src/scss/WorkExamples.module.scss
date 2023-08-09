@@ -1,0 +1,54 @@
+.bgContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: -170px;
+  width: 100%;
+  height: 100vh;
+  min-height: 900px;
+  background-image: url(../images/examples-bg.jpg);
+  background-size: 100% 100%;
+  padding: 220px 0 255px;
+  .container {
+    margin-left: 15%;
+    .headMenu {
+      display: flex;
+      align-items: center;
+      .headMenuElement {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        margin-right: 10px;
+        .icon {
+          margin-right: 5px;
+        }
+      }
+    }
+    .titleContainer {
+      .firtsTitle {
+        font-size: 46px;
+        font-weight: 200;
+        .bold {
+          font-weight: 900;
+        }
+      }
+      .secondTitle {
+        font-size: 26px;
+        font-weight: 400;
+      }
+    }
+    .caruselContainer {
+      width: 1350px;
+      height: 552px;
+    }
+    .question {
+      margin-top: 50px;
+      font-size: 20px;
+      font-weight: 400;
+      .bold {
+        font-weight: 900;
+      }
+    }
+  }
+}

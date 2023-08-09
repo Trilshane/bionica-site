@@ -1,0 +1,104 @@
+.container {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: -150px;
+  width: 100%;
+  height: 100vh;
+  min-height: 900px;
+  background-image: url("../images/product-bg.png");
+  background-size: 100% 100%;
+  padding: 220px 0 255px;
+
+  .headMenu {
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+    .headMenuElement {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      margin-right: 10px;
+      .icon {
+        margin-right: 5px;
+      }
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .titleContainer {
+      text-align: center;
+      color: #fff;
+
+      .firstTitle {
+        font-size: 46px;
+        font-weight: 200;
+        margin-bottom: 5px;
+      }
+      .secondTitle {
+        font-size: 23px;
+      }
+    }
+    .buttonsZone {
+      display: flex;
+      width: 60%;
+      justify-content: space-between;
+      margin: 25px auto;
+      .button {
+        font-size: 16px;
+        color: #1c1d20;
+        padding: 19px 0 21px 0;
+        background-color: #fff;
+        font-weight: 700;
+        position: relative;
+        transition: 0.5s ease-in-out;
+        z-index: 10;
+        width: 235px;
+        border: none;
+        cursor: pointer;
+        &:hover {
+          background: linear-gradient(
+            86.81deg,
+            #f96e09 -1.45%,
+            #ecd823 110.87%
+          );
+          box-shadow: 0px 14px 14px rgba(0, 0, 0, 0.05);
+          color: #fff;
+        }
+      }
+      .active {
+        background: linear-gradient(86.81deg, #f96e09 -1.45%, #ecd823 110.87%);
+        box-shadow: 0px 14px 14px rgba(0, 0, 0, 0.05);
+        color: #fff;
+      }
+    }
+    .productZone {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 428px 428px 428px;
+      grid-gap: 20px;
+      justify-content: center;
+      margin-bottom: 30px;
+
+      .product {
+        width: 428px;
+        height: 496px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        color: #000;
+
+        .titleImage {
+          width: 390px;
+          height: 290px;
+        }
+      }
+    }
+  }
+}

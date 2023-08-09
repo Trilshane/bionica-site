@@ -1,0 +1,24 @@
+.titleIcon {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 52%;
+    width: 61px;
+    height: 1px;
+    background: #efc11c;
+  }
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 51.4%;
+    width: 61px;
+    height: 1px;
+    background: #efc11c;
+  }
+}
