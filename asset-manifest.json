@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bionica-site/static/css/main.c972144e.css",
+    "main.css": "/bionica-site/static/css/main.bdbb8044.css",
     "main.js": "/bionica-site/static/js/main.06aba688.js",
     "static/media/swiper-img.jpeg": "/bionica-site/static/media/swiper-img.d75f7597040f3c1c7360.jpeg",
     "static/media/swiper-img5.jpeg": "/bionica-site/static/media/swiper-img5.27a92c170d33cd8faab8.jpeg",
@@ -135,11 +135,11 @@
     "static/media/range-img.svg": "/bionica-site/static/media/range-img.4d1e55ff0a8fb9c5eccb.svg",
     "static/media/next-icon1.svg": "/bionica-site/static/media/next-icon1.137c9a459d73733d0662.svg",
     "static/media/top-menu-bar-line.svg": "/bionica-site/static/media/top-menu-bar-line.deae91c1df9c5b10673ae2a79bfb3f1b.svg",
-    "main.c972144e.css.map": "/bionica-site/static/css/main.c972144e.css.map",
+    "main.bdbb8044.css.map": "/bionica-site/static/css/main.bdbb8044.css.map",
     "main.06aba688.js.map": "/bionica-site/static/js/main.06aba688.js.map"
   },
   "entrypoints": [
-    "static/css/main.c972144e.css",
+    "static/css/main.bdbb8044.css",
     "static/js/main.06aba688.js"
   ]
 }
