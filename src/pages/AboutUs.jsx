@@ -1,10 +1,12 @@
+import { Link } from "react-scroll";
 import ConsultationForm from "../components/ConsultationForm";
 import FireIconOneLine from "../components/FireIconOneLine";
 
 import styles from "../scss/AboutUs.module.scss";
 
-import homeIcon from "../images/home-icon.svg";
+import homeIcon from "../images/house-icon.svg";
 import menuLine from "../images/top-menu-bar-line.svg";
+
 import aboutIcon1 from "../images/about-icon-1.svg";
 import aboutIcon2 from "../images/about-icon-2.svg";
 import aboutIcon3 from "../images/about-icon-3.svg";
@@ -48,16 +50,39 @@ const aboutElements = [
 const AboutUs = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.marginContainer}>
+      <div id="aboutUs" className={styles.marginContainer}>
         <div className={styles.headMenu}>
-          <a href="#!" className={styles.headMenuElement}>
+          <Link
+            to="headPage"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={styles.headMenuElement}
+          >
             <img className={styles.icon} src={homeIcon} alt="homeIcon" />
-            <span className={styles.content}>Наша продукция</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>О нас</span>
-          </a>
+          </Link>
+          <Link
+            to="product"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Наша продукция
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="aboutUs"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} ${styles.active}`}
+          >
+            О нас
+          </Link>
         </div>
         <div className={styles.titleContainer}>
           <h1 className={styles.firstTitle}>

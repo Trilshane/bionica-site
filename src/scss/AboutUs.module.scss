@@ -14,17 +14,19 @@
     .headMenu {
       display: flex;
       align-items: center;
+      .active {
+        color: #fff !important;
+      }
       .headMenuElement {
         display: flex;
         align-items: center;
         text-decoration: none;
-        color: #fff;
+        color: #f2a718;
+        margin: 0 10px;
+        cursor: pointer;
         .icon {
           margin-right: 5px;
         }
-      }
-      .menuLine {
-        margin: 0 10px;
       }
     }
     .titleContainer {

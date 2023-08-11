@@ -1,11 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import { Link } from "react-scroll";
 
 import TilteContext from "../components/Context";
 import MapElem from "../components/MapElem";
+import BlackModal from "../components/BlackModal";
 
 import styles from "../scss/Reviews.module.scss";
 
-import homeIcon from "../images/home-icon.svg";
+import homeIcon from "../images/house-icon.svg";
 import menuLine from "../images/top-menu-bar-line.svg";
 
 import map from "../images/map-russia.png";
@@ -31,27 +34,67 @@ import Button from "../components/Button";
 import FireIconTwoLine from "../components/FireIconTwoLine";
 
 const Reviews = () => {
+  const [deleviryModal, setDeleviryModal] = useState(false);
+  const closeModalWindow = () => setDeleviryModal(false);
+
   const { today } = useContext(TilteContext);
   return (
     <div className={styles.bgContainer}>
-      <div className={styles.container}>
+      <div id="reviews" className={styles.container}>
         <div className={styles.headMenu}>
-          <a href="#!" className={styles.headMenuElement}>
+          <Link
+            to="headPage"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={styles.headMenuElement}
+          >
             <img className={styles.icon} src={homeIcon} alt="homeIcon" />
-            <span className={styles.content}>Наша продукция</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>О нас</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Примеры</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Отзывы</span>
-          </a>
+          </Link>
+          <Link
+            to="product"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Наша продукция
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="aboutUs"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            О нас
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="workExamples"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} `}
+          >
+            Примеры
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="reviews"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} ${styles.active}`}
+          >
+            Отзывы
+          </Link>
         </div>
         <div className={styles.contentContainer}>
           <div className={styles.titleContainer}>
@@ -84,10 +127,27 @@ const Reviews = () => {
               <span className={styles.bold}>Доставка 0 рублей </span> по России
               до {today}
             </h4>
-            <Button content={"Получить бесплатную доставку"} />
+            <Button
+              click={() => setDeleviryModal(true)}
+              content={"Получить бесплатную доставку"}
+            />
           </div>
         </div>
       </div>
+      <CSSTransition
+        in={deleviryModal}
+        classNames="modal"
+        timeout={600}
+        unmountOnExit
+      >
+        <BlackModal
+          title={"Заказать бесплатную доставку"}
+          closeModal={closeModalWindow}
+          message={false}
+          state={deleviryModal}
+          btn={"Отправить"}
+        />
+      </CSSTransition>
     </div>
   );
 };

@@ -38,12 +38,13 @@
         justify-content: space-evenly;
         .navBarElem {
           list-style: none;
-          a {
+          .navElem {
             text-decoration: none;
             color: #fff;
             font-size: 14px;
             font-weight: 400;
             transition: 0.5s;
+            cursor: pointer;
             &:hover {
               color: #f2a718;
             }

@@ -1,4 +1,6 @@
-import homeIcon from "../images/home-icon.svg";
+import { Link } from "react-scroll";
+
+import homeIcon from "../images/house-icon.svg";
 import menuLine from "../images/top-menu-bar-line.svg";
 import img1 from "../images/catalog-img1.png";
 import img2 from "../images/catalog-img2.png";
@@ -26,35 +28,93 @@ const BeautifulAndSafe = () => {
   return (
     <div className={styles.bgContainer}>
       <div className={styles.container}>
-        <div className={styles.headMenu}>
-          <a href="#!" className={styles.headMenuElement}>
+        <div id="beautifulAndSafe" className={styles.headMenu}>
+          <Link
+            to="headPage"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={styles.headMenuElement}
+          >
             <img className={styles.icon} src={homeIcon} alt="homeIcon" />
-            <span className={styles.content}>Наша продукция</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>О нас</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Примеры</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Отзывы</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Качество</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Топливные блоки</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Красиво и надежно</span>
-          </a>
+          </Link>
+          <Link
+            to="product"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Наша продукция
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="aboutUs"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            О нас
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="workExamples"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} `}
+          >
+            Примеры
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="reviews"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Отзывы
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="quality"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Качественно
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="fuelBlocks"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Топливные блоки
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="beautifulAndSafe"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} ${styles.active}`}
+          >
+            Красиво и надежно
+          </Link>
         </div>
         <div className={styles.contentContainer}>
           {BeautifulAndSafeContentArray.map((elem) => (

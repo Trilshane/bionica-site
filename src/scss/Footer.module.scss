@@ -3,10 +3,10 @@
   top: 0;
   left: 0;
   margin-top: -170px;
-
+  height: 150%;
   background-image: url(../images/footer-bg.jpg);
   background-size: 100% 100%;
-  padding: 220px 0 0 0np;
+  padding: 220px 0 0 0;
   z-index: inherit;
   .container {
     width: 100%;
@@ -46,12 +46,13 @@
           justify-content: space-evenly;
           .navBarElem {
             list-style: none;
-            a {
+            .navElem {
               text-decoration: none;
               color: #fff;
               font-size: 14px;
               font-weight: 400;
               transition: 0.5s;
+              cursor: pointer;
               &:hover {
                 color: #f2a718;
               }

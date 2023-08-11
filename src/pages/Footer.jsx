@@ -1,3 +1,5 @@
+import { Link } from "react-scroll";
+
 import logo from "../images/logo.svg";
 import phoneIcon from "../images/phone-icon.svg";
 import mailIcon from "../images/massages-icon.svg";
@@ -22,25 +24,81 @@ const Footer = () => {
           <div className={styles.menuContainer}>
             <ul className={styles.navBar}>
               <li className={styles.navBarElem}>
-                <a href="#!">Наша продукция</a>
+                <Link
+                  to="product"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className={styles.navElem}
+                >
+                  Наша продукция
+                </Link>
               </li>
               <li className={styles.navBarElem}>
-                <a href="#!">Отзывы</a>
+                <Link
+                  to="reviews"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className={styles.navElem}
+                >
+                  Отзывы
+                </Link>
               </li>
               <li className={styles.navBarElem}>
-                <a href="#!">Качество</a>
+                <Link
+                  to="quality"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className={styles.navElem}
+                >
+                  Качество
+                </Link>
               </li>
               <li className={styles.navBarElem}>
-                <a href="#!">Оплата и доставка</a>
+                <Link
+                  to="paymentAndDelivery"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className={styles.navElem}
+                >
+                  Оплата и доставка
+                </Link>
               </li>
               <li className={styles.navBarElem}>
-                <a href="#!">Гарантия</a>
+                <Link
+                  to="fireplaceWarranty"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className={styles.navElem}
+                >
+                  Гарантия
+                </Link>
               </li>
               <li className={styles.navBarElem}>
-                <a href="#!">Написать директору</a>
+                <a className={styles.navElem} href="#!">
+                  Написать директору
+                </a>
               </li>
               <li className={styles.navBarElem}>
-                <a href="#!">Дизайнерам</a>
+                <Link
+                  to="designers"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className={styles.navElem}
+                >
+                  Дизайнерам
+                </Link>
               </li>
             </ul>
           </div>

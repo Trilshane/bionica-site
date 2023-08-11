@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { RiCloseFill } from "react-icons/ri";
 
 import styles from "../scss/ProductModal.module.scss";
@@ -17,17 +17,29 @@ const ProductModal = ({
   material,
   price,
   modalCaruselSettings,
+  click,
+  clickCatalog,
 }) => {
-  const { setModalIndex } = useContext(TilteContext);
+  const { category, modalIndex, setModalIndex } = useContext(TilteContext);
+  const modalRef = useRef();
+  const modalWindowRef = useRef();
 
+  useEffect(() => {
+    const clickOutside = (e) => {
+      if (modalRef.current.contains(e.target)) {
+        console.log(1);
+        if (!modalWindowRef.current.contains(e.target)) {
+          setModalIndex();
+        }
+      }
+    };
+    document.addEventListener("click", clickOutside);
+    return () => document.removeEventListener("click", clickOutside);
+  }, [setModalIndex]);
+  console.log(modalIndex);
   return (
-    <div
-      onClick={(e) => {
-        e.currentTarget === e.target && setModalIndex();
-      }}
-      className={styles.container}
-    >
-      <div className={styles.modalWindow}>
+    <div ref={modalRef} className={styles.container}>
+      <div ref={modalWindowRef} className={styles.modalWindow}>
         <button className={styles.closeButton} onClick={() => setModalIndex()}>
           <RiCloseFill />
         </button>
@@ -51,7 +63,7 @@ const ProductModal = ({
                 1-5 дней
               </p>
             </div>
-            <Button content={"Купить в 1 клик"} />
+            <Button click={click} content={"Купить в 1 клик"} />
           </div>
           <div className={styles.modalWindowRightContent}>
             <h4 className={styles.title}>{name}</h4>
@@ -63,36 +75,58 @@ const ProductModal = ({
             </p>
             <div className={styles.characteristics}>
               <p className={styles.bold}>Характеристики:</p>
-              <p className={styles.characteristicsContent}>
-                Размеры: {sizes} мм
-              </p>
-              <p className={styles.characteristicsContent}>
-                Мощность: {power} кВт
-              </p>
-              <p className={styles.characteristicsContent}>
-                Длинна огня: {fireLength} мм
-              </p>
-              <p className={styles.characteristicsContent}>
-                Объем горелки: {burnerVolume} л.
-              </p>
-              <p className={styles.characteristicsContent}>
-                Материал: {material}.
-              </p>
+              {modalIndex === 0 && category === 2 ? (
+                <p className={styles.individual}>
+                  Индивидуальное проектирование!
+                </p>
+              ) : (
+                <div className={styles.characteristicsZone}>
+                  <div className={styles.characteristicsContent}>
+                    <p className={styles.titleContent}>Размеры</p>
+                    <div className={styles.border}></div>
+                    <p className={styles.content}>{sizes}</p>
+                  </div>
+                  <div className={styles.characteristicsContent}>
+                    <p className={styles.titleContent}>Мощность</p>
+                    <div className={styles.border}></div>
+                    <p className={styles.content}>{power}</p>
+                  </div>
+                  <div className={styles.characteristicsContent}>
+                    <p className={styles.titleContent}>Длинна огня</p>
+                    <div className={styles.border}></div>
+                    <p className={styles.content}>{fireLength}</p>
+                  </div>
+                  <div className={styles.characteristicsContent}>
+                    <p className={styles.titleContent}>Объем горелки</p>
+                    <div className={styles.border}></div>
+                    <p className={styles.content}>{burnerVolume}</p>
+                  </div>
+                  <div className={styles.characteristicsContent}>
+                    <p className={styles.titleContent}>Материал</p>
+                    <div className={styles.border}></div>
+                    <p className={styles.content}>{material}</p>
+                  </div>
+                </div>
+              )}
             </div>
             <div className={styles.priceZone}>
               <div className={styles.existence}>
                 <p className={styles.existenceContent}>
-                  В наличии на складе 2шт.
+                  В наличии на складе,{" "}
+                  <span className={styles.green}>2шт.</span>
                 </p>
-                <p className={styles.vendorCode}>110122</p>
+                <p className={styles.vendorCode}>Арт. 110122</p>
               </div>
               <p className={styles.price}>
-                <span className={styles.bold}>{price}</span>₽
+                <span className={styles.bold}>{price}</span>
               </p>
             </div>
             <div className={styles.otherModels}>
               Эту модель в другом цвете и размерах, а так же другие модели
-              смотрите <a href="#!">в нашем каталоге</a>
+              смотрите{" "}
+              <span onClick={clickCatalog} className={styles.catalogLink}>
+                в нашем каталоге
+              </span>
             </div>
           </div>
         </div>

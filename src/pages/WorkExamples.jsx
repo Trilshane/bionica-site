@@ -1,32 +1,67 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import { Link } from "react-scroll";
 
 import styles from "../scss/WorkExamples.module.scss";
 
-import homeIcon from "../images/home-icon.svg";
+import homeIcon from "../images/house-icon.svg";
 import menuLine from "../images/top-menu-bar-line.svg";
 import Carusel from "../components/Carusel";
 import TilteContext from "../components/Context";
 import Button from "../components/Button";
 import FireIconOneLine from "../components/FireIconOneLine";
+import BlackModal from "../components/BlackModal";
 
 const WorkExamples = () => {
+  const [catalogModal, setCatalogModal] = useState(false);
+  const closeModalWindow = () => setCatalogModal(false);
   const { examplesPhotos, examplesCaruselSettings } = useContext(TilteContext);
   return (
     <div className={styles.bgContainer}>
-      <div className={styles.container}>
+      <div id="workExamples" className={styles.container}>
         <div className={styles.headMenu}>
-          <a href="#!" className={styles.headMenuElement}>
+          <Link
+            to="headPage"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={styles.headMenuElement}
+          >
             <img className={styles.icon} src={homeIcon} alt="homeIcon" />
-            <span className={styles.content}>Наша продукция</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>О нас</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Примеры</span>
-          </a>
+          </Link>
+          <Link
+            to="product"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Наша продукция
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="aboutUs"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            О нас
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="workExamples"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} ${styles.active}`}
+          >
+            Примеры
+          </Link>
         </div>
         <div className={styles.titleContainer}>
           <h1 className={styles.firtsTitle}>
@@ -47,8 +82,22 @@ const WorkExamples = () => {
         <p className={styles.question}>
           <span className={styles.bold}>Хотите</span> что-то похожее ?
         </p>
-        <Button content={"Да"} />
+        <Button click={() => setCatalogModal(true)} content={"Да"} />
       </div>
+      <CSSTransition
+        in={catalogModal}
+        classNames="modal"
+        timeout={600}
+        unmountOnExit
+      >
+        <BlackModal
+          title={"Каталог биокаминов"}
+          closeModal={closeModalWindow}
+          message={false}
+          state={catalogModal}
+          btn={"Получить каталог"}
+        />
+      </CSSTransition>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 {
+  "homepage": "https://trilshane.github.io/bionica-site",
   "name": "bionika-site",
   "version": "0.1.0",
   "private": true,
@@ -11,6 +12,7 @@
     "react-icons": "^4.10.1",
     "react-input-mask": "^2.0.4",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",
     "react-transition-group": "^4.4.5",
     "sass": "^1.64.2",

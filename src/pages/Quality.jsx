@@ -1,7 +1,12 @@
+import { useState } from "react";
+import { Link } from "react-scroll";
+import { CSSTransition } from "react-transition-group";
+
 import Button from "../components/Button";
 import FireIconOneLine from "../components/FireIconOneLine";
+import BlackModal from "../components/BlackModal";
 
-import homeIcon from "../images/home-icon.svg";
+import homeIcon from "../images/house-icon.svg";
 import menuLine from "../images/top-menu-bar-line.svg";
 
 import styles from "../scss/Quality.module.scss";
@@ -29,30 +34,76 @@ const videoElems = [
 ];
 
 const Quality = () => {
+  const [videoInstructionModal, setVideoInstructionModal] = useState(false);
+  const closeModalWindow = () => setVideoInstructionModal(false);
   return (
     <div className={styles.bgContainer}>
-      <div className={styles.container}>
+      <div id="quality" className={styles.container}>
         <div className={styles.headMenu}>
-          <a href="#!" className={styles.headMenuElement}>
+          <Link
+            to="headPage"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={styles.headMenuElement}
+          >
             <img className={styles.icon} src={homeIcon} alt="homeIcon" />
-            <span className={styles.content}>Наша продукция</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>О нас</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Примеры</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Отзывы</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Качество</span>
-          </a>
+          </Link>
+          <Link
+            to="product"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Наша продукция
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="aboutUs"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            О нас
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="workExamples"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} `}
+          >
+            Примеры
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="reviews"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Отзывы
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="quality"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} ${styles.active}`}
+          >
+            Качественно
+          </Link>
         </div>
         <div className={styles.titleContainer}>
           <h1 className={styles.firstTitle}>Качственно</h1>
@@ -80,10 +131,27 @@ const Quality = () => {
               </span>{" "}
               на наше производство
             </p>
-            <Button content={"Записаться"} />
+            <Button
+              click={() => setVideoInstructionModal(true)}
+              content={"Записаться"}
+            />
           </div>
         </div>
       </div>
+      <CSSTransition
+        in={videoInstructionModal}
+        classNames="modal"
+        timeout={600}
+        unmountOnExit
+      >
+        <BlackModal
+          title={"Записаться на видео-экскурсию"}
+          closeModal={closeModalWindow}
+          message={false}
+          state={videoInstructionModal}
+          btn={"Записаться"}
+        />
+      </CSSTransition>
     </div>
   );
 };

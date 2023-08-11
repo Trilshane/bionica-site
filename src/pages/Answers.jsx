@@ -1,8 +1,10 @@
+import { Link } from "react-scroll";
+
 import FireIconOneLine from "../components/FireIconOneLine";
 import Question from "../components/Question";
 import Button from "../components/Button";
 
-import homeIcon from "../images/home-icon.svg";
+import homeIcon from "../images/house-icon.svg";
 import menuLine from "../images/top-menu-bar-line.svg";
 
 import styles from "../scss/Answers.module.scss";
@@ -10,44 +12,105 @@ import styles from "../scss/Answers.module.scss";
 const Answers = () => {
   return (
     <div className={styles.bgContainer}>
-      <div className={styles.container}>
+      <div id="answers" className={styles.container}>
         <div className={styles.headMenu}>
-          <a href="#!" className={styles.headMenuElement}>
+          <Link
+            to="headPage"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={styles.headMenuElement}
+          >
             <img className={styles.icon} src={homeIcon} alt="homeIcon" />
-            <span className={styles.content}>Наша продукция</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>О нас</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Примеры</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Отзывы</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Качество</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Топливные блоки</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Красиво и надежно</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Оплата и доставка</span>
-          </a>
-          <img className={styles.menuLine} src={menuLine} alt="menulaine" />
-          <a href="#!" className={styles.headMenuElement}>
-            <span className={styles.content}>Ответы на вопросы</span>
-          </a>
+          </Link>
+          <Link
+            to="product"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Наша продукция
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="aboutUs"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            О нас
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="workExamples"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} `}
+          >
+            Примеры
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="reviews"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Отзывы
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="quality"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Качественно
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="fuelBlocks"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Топливные блоки
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="paymentAndDelivery"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement}`}
+          >
+            Оплата и доставка
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+          <Link
+            to="answers"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} ${styles.active}`}
+          >
+            Ответы на вопросы
+          </Link>
         </div>
         <h1 className={styles.title}>
           <span className={styles.bold}>Ответы</span> на часто задаваемые

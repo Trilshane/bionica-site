@@ -1,12 +1,17 @@
+import { CSSTransition } from "react-transition-group";
+import { useState } from "react";
 import Header from "../components/Header";
 import styles from "../scss/HeadPage.module.scss";
 
 import checkMark from "../images/home-icon.svg";
 import ButtonWithIcon from "../components/ButtonWithIcon";
+import BlackModal from "../components/BlackModal";
 
 const HeadPage = () => {
+  const [catalogModal, setCatalogModal] = useState(false);
+  const closeModalWindow = () => setCatalogModal(false);
   return (
-    <div className={styles.container}>
+    <div id="headPage" className={styles.container}>
       <Header />
       <div className={styles.titleZone}>
         <p className={styles.title}>
@@ -43,9 +48,26 @@ const HeadPage = () => {
               <span className={styles.bold}> Bionika 2023</span> прямо сейчас!
             </p>
           </div>
-          <ButtonWithIcon content={"Получить каталог"} />
+          <ButtonWithIcon
+            click={() => setCatalogModal(true)}
+            content={"Получить каталог"}
+          />
         </div>
       </div>
+      <CSSTransition
+        in={catalogModal}
+        classNames="modal"
+        timeout={600}
+        unmountOnExit
+      >
+        <BlackModal
+          title={"Каталог биокаминов"}
+          closeModal={closeModalWindow}
+          message={false}
+          state={catalogModal}
+          btn={"Получить каталог"}
+        />
+      </CSSTransition>
     </div>
   );
 };

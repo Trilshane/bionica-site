@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { AiFillCaretDown, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
+
+import dropDown from "../images/arrow-down.svg";
 
 import styles from "../scss/Dropdown.module.scss";
 
@@ -59,7 +61,9 @@ const Dropdown = () => {
             }}
           />
         ) : (
-          <AiFillCaretDown
+          <img
+            src={dropDown}
+            alt="dropdown"
             style={
               isActive
                 ? { transform: "rotate(180deg)" }

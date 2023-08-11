@@ -1,10 +1,20 @@
+import { useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import { Link } from "react-scroll";
+
 import styles from "../scss/HeaderTop.module.scss";
 
 import phoneIcon from "../images/phone-icon.svg";
 import mailIcon from "../images/massages-icon.svg";
 import hourIcon from "../images/hour-icon.svg";
+import BlackModal from "./BlackModal";
 
 const HeaderTop = () => {
+  const [drawModal, setDrawModal] = useState(false);
+  const [phoneModal, setPhoneModal] = useState(false);
+
+  const closeDrawModalWindow = () => setDrawModal(false);
+  const closePhoneModalWindow = () => setPhoneModal(false);
   return (
     <div className={styles.container}>
       <div className={styles.contactLinks}>
@@ -24,16 +34,51 @@ const HeaderTop = () => {
         </div>
       </div>
       <div className={styles.links}>
-        <a className={styles.link} href="!#">
+        <button onClick={() => setDrawModal(true)} className={styles.link}>
           Получить чертеж и схему монтажа по Вашим размерами
-        </a>
-        <a className={styles.link} href="!#">
+        </button>
+        <Link
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          to="answers"
+          className={styles.link}
+        >
           Ответы на вопросы
-        </a>
-        <a className={styles.link} href="!#">
+        </Link>
+        <button className={styles.link} onClick={() => setPhoneModal(true)}>
           Заказать звонок
-        </a>
+        </button>
       </div>
+      <CSSTransition
+        in={drawModal}
+        classNames="modal"
+        timeout={600}
+        unmountOnExit
+      >
+        <BlackModal
+          title={"Получить чертеж"}
+          closeModal={closeDrawModalWindow}
+          message={false}
+          state={drawModal}
+          btn={"Отправить"}
+        />
+      </CSSTransition>
+      <CSSTransition
+        in={phoneModal}
+        classNames="modal"
+        timeout={600}
+        unmountOnExit
+      >
+        <BlackModal
+          title={"Заказать звонок"}
+          closeModal={closePhoneModalWindow}
+          message={false}
+          state={phoneModal}
+          btn={"Заказать"}
+        />
+      </CSSTransition>
     </div>
   );
 };

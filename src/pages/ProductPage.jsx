@@ -1,16 +1,23 @@
-import { useContext } from "react";
+import { Link } from "react-scroll";
+import { useContext, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import styles from "../scss/ProductPage.module.scss";
 
-import homeIcon from "../images/home-icon.svg";
+import homeIcon from "../images/house-icon.svg";
 import menuLine from "../images/top-menu-bar-line.svg";
 
 import ProductModal from "../components/ProductModal";
 import TilteContext from "../components/Context";
 import ButtonWithIcon from "../components/ButtonWithIcon";
 import FireIconTwoLine from "../components/FireIconTwoLine";
+import BlackModal from "../components/BlackModal";
+import Button from "../components/Button";
 
 const ProductPage = () => {
+  const [catalogModal, setCatalogModal] = useState(false);
+  const closeModalWindow = () => setCatalogModal(false);
+
   const {
     category,
     setCategory,
@@ -19,88 +26,165 @@ const ProductPage = () => {
     modalIndex,
     setModalIndex,
     currentProducts,
+    onClickModal,
+    setOnClickModal,
   } = useContext(TilteContext);
+  const OnClickCatalogModal = () => {
+    setModalIndex();
+    setCatalogModal(true);
+  };
+
+  const OnClickModal = () => {
+    setModalIndex();
+    setOnClickModal(true);
+  };
+  const closeOnClickModal = () => {
+    setOnClickModal(false);
+  };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.headMenu}>
-        <a href="#!" className={styles.headMenuElement}>
-          <img className={styles.icon} src={homeIcon} alt="homeIcon" />
-          <span className={styles.content}>Наша продукция</span>
-        </a>
-
-        <img src={menuLine} alt="menulaine" />
-      </div>
-      <div className={styles.content}>
-        <div className={styles.titleContainer}>
-          <p className={styles.firstTitle}>
-            Наша <b style={{ fontWeight: "900" }}>продукция</b>
-          </p>
-          <p className={styles.secondTitle}>в наличии на {today}</p>
+    <div id="product" className={styles.bgContainer}>
+      <div className={styles.container}>
+        <div className={styles.headMenu}>
+          <Link
+            to="headPage"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={styles.headMenuElement}
+          >
+            <img className={styles.icon} src={homeIcon} alt="homeIcon" />
+          </Link>
+          <Link
+            to="product"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className={`${styles.headMenuElement} ${styles.active}`}
+          >
+            Наша продукция
+          </Link>
+          <img src={menuLine} alt="menulaine" />
+        </div>
+        <div className={styles.content}>
+          <div className={styles.titleContainer}>
+            <p className={styles.firstTitle}>
+              Наша <b style={{ fontWeight: "900" }}>продукция</b>
+            </p>
+            <p className={styles.secondTitle}>в наличии на {today}</p>
+          </div>
           <FireIconTwoLine />
-        </div>
-        <div className={styles.buttonsZone}>
-          {btns.map((btn, i) => (
-            <button
-              key={btn}
-              onClick={() => setCategory(i)}
-              className={`${styles.button} ${
-                category === i ? `${styles.active}` : ""
-              }`}
-            >
-              {btn}
-            </button>
-          ))}
-        </div>
-        <div className={styles.productZone}>
-          {currentProducts.map((product, i) => {
-            return (
-              <div key={product.name} className={styles.product}>
-                <img
-                  className={styles.titleImage}
-                  src={product.titlePhoto}
-                  alt="productPhoto"
-                />
-                <div className={styles.sizesZone}>
-                  <p className={styles.sizeZoneElem}>
-                    Размеры: {product.sizes} мм
-                  </p>
-                  <p className={styles.sizeZoneElem}>
-                    Мощность: {product.power} кВт
-                  </p>
-                </div>
-                <div className={styles.priceZone}>
-                  <div className={styles.price}>
-                    <p>Цена:</p>
-                    <h1>{product.price} ₽</h1>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setModalIndex(i);
-                    }}
-                  >
-                    Подробнее
-                  </button>
-                </div>
-                {i === modalIndex && (
-                  <ProductModal
-                    name={product.name}
-                    photos={product.slidePhotos}
-                    about={product.about}
-                    sizes={product.sizes}
-                    power={product.power}
-                    fireLength={product.fireLength}
-                    burnerVolume={product.burnerVolume}
-                    material={product.material}
-                    price={product.price}
+          <div className={styles.buttonsZone}>
+            {btns.map((btn, i) => (
+              <button
+                key={btn}
+                onClick={() => setCategory(i)}
+                className={`${styles.button} ${
+                  category === i ? `${styles.active}` : ""
+                }`}
+              >
+                {btn}
+              </button>
+            ))}
+          </div>
+          <div className={styles.productZone}>
+            {currentProducts.map((product, i) => {
+              return (
+                <div key={product.name} className={styles.product}>
+                  <img
+                    className={styles.titleImage}
+                    src={product.titlePhoto}
+                    alt="productPhoto"
                   />
-                )}
-              </div>
-            );
-          })}
+                  <div className={styles.sizesZone}>
+                    <div className={styles.sizeZoneElem}>
+                      <p className={styles.title}>Размеры </p>{" "}
+                      <div className={styles.border}></div>
+                      <p className={styles.content}>{product.sizes}</p>
+                    </div>
+                    <div className={styles.sizeZoneElem}>
+                      <p className={styles.title}>Мощность </p>{" "}
+                      <div className={styles.border}></div>
+                      <p className={styles.content}>{product.power}</p>
+                    </div>
+                  </div>
+                  <div className={styles.priceZone}>
+                    <div className={styles.price}>
+                      <p>Цена:</p>
+                      <h1>{product.price} </h1>
+                    </div>
+                    <Button
+                      click={() => {
+                        setModalIndex(i);
+                      }}
+                      content={"Подробнее"}
+                    />
+                  </div>
+
+                  <CSSTransition
+                    in={i === modalIndex}
+                    classNames="modal"
+                    timeout={600}
+                    unmountOnExit
+                  >
+                    <ProductModal
+                      name={product.name}
+                      photos={product.slidePhotos}
+                      about={product.about}
+                      sizes={product.sizes}
+                      power={product.power}
+                      fireLength={product.fireLength}
+                      burnerVolume={product.burnerVolume}
+                      material={product.material}
+                      price={product.price}
+                      click={OnClickModal}
+                      clickCatalog={OnClickCatalogModal}
+                    />
+                  </CSSTransition>
+                </div>
+              );
+            })}
+          </div>
+          <ButtonWithIcon
+            click={() => setCatalogModal(true)}
+            content={"Скачать каталог Bionika 2023"}
+          />
         </div>
-        <ButtonWithIcon content={"Скачать каталог Bionika 2023"} />
       </div>
+      <CSSTransition
+        in={catalogModal}
+        classNames="modal"
+        timeout={600}
+        unmountOnExit
+      >
+        <BlackModal
+          title={
+            "Получите полный каталог биокаминов и выберите лучший прямо сейчас!"
+          }
+          closeModal={closeModalWindow}
+          message={false}
+          state={catalogModal}
+          btn={"Получить каталог"}
+        />
+      </CSSTransition>
+      <CSSTransition
+        in={onClickModal}
+        classNames="modal"
+        timeout={600}
+        unmountOnExit
+      >
+        <BlackModal
+          title={
+            "Оставте заявку и наши менеджеры свяжутся с вами в течении 15 минут"
+          }
+          closeModal={closeOnClickModal}
+          message={false}
+          state={catalogModal}
+          btn={"Купить в 1 клик"}
+        />
+      </CSSTransition>
     </div>
   );
 };

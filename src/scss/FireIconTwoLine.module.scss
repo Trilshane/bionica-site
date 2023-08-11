@@ -2,21 +2,23 @@
   display: flex;
   justify-content: center;
   position: relative;
+  width: 20%;
+  margin: 0 auto;
 
-  &::after {
-    content: " ";
+  &::before {
+    content: "";
     position: absolute;
     top: 50%;
-    right: 52%;
+    right: 35px;
     width: 61px;
     height: 1px;
     background: #efc11c;
   }
-  &::before {
-    content: " ";
+  &::after {
+    content: "";
     position: absolute;
     top: 50%;
-    left: 51.4%;
+    left: 30px;
     width: 61px;
     height: 1px;
     background: #efc11c;

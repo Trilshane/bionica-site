@@ -1,5 +1,4 @@
 import styles from "../scss/SmallForm.module.scss";
-import Button from "./Button";
 
 const SmallForm = ({ content }) => {
   return (
@@ -19,7 +18,7 @@ const SmallForm = ({ content }) => {
           placeholder="+7 (___) ___-__-__"
           required
         />
-        <Button content={content} />
+        <button className={styles.btn}>{content}</button>
       </form>
     </div>
   );
