@@ -27,8 +27,8 @@ const PaymentAndDelivery = () => {
   const closeModalWindow2 = () => setModal2Open(false);
 
   return (
-    <div className={styles.bgContainer}>
-      <div id="paymentAndDelivery" className={styles.container}>
+    <div id="paymentAndDelivery" className={styles.bgContainer}>
+      <div className={styles.container}>
         <div className={styles.headMenu}>
           <Link
             to="headPage"

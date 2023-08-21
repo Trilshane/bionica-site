@@ -6,28 +6,43 @@ const MapElem = ({ photo, top, left }) => {
   const [hoverMapElem, setHoverMapElem] = useState(false);
   return (
     <div
-      style={{ position: "absolute", top: top + "%", left: left + "%" }}
+      style={{
+        position: "absolute",
+        top: top + "%",
+        left: left + "%",
+      }}
       onMouseEnter={() => setHoverMapElem(true)}
       onMouseLeave={() => setHoverMapElem(false)}
     >
-      {hoverMapElem ? (
-        <img
-          style={{
-            width: "250px",
-            transition: "1s",
-            position: "inherit",
-            zIndex: 1,
-          }}
-          src={photo}
-          alt="review"
-        />
-      ) : (
-        <img
-          style={{ width: "18px", transition: ".5s" }}
-          src={location}
-          alt="location"
-        />
-      )}
+      <img
+        style={
+          hoverMapElem
+            ? { display: "none" }
+            : { width: "18px", transition: ".5s" }
+        }
+        src={location}
+        alt="location"
+      />
+      <img
+        style={
+          hoverMapElem
+            ? {
+                animation: "shows 1s",
+                width: "250px",
+                position: "inherit",
+                zIndex: 1,
+                opacity: 1,
+                transition: "0.6s",
+              }
+            : {
+                opacity: 0,
+                transition: "0.6s",
+                width: "18px",
+              }
+        }
+        src={photo}
+        alt="review"
+      />
     </div>
   );
 };

@@ -5,12 +5,13 @@ import { Link } from "react-scroll";
 import TilteContext from "../components/Context";
 import MapElem from "../components/MapElem";
 import BlackModal from "../components/BlackModal";
+import Button from "../components/Button";
+import FireIconTwoLine from "../components/FireIconTwoLine";
 
 import styles from "../scss/Reviews.module.scss";
 
 import homeIcon from "../images/house-icon.svg";
 import menuLine from "../images/top-menu-bar-line.svg";
-
 import map from "../images/map-russia.png";
 import Adygea from "../images/map-reviews/Адыгея.jpg";
 import Anadyr from "../images/map-reviews/Анадырь.jpg";
@@ -30,17 +31,51 @@ import Samara from "../images/map-reviews/самара2.jpg";
 import Surgut from "../images/map-reviews/сургут.jpg";
 import Cherepovets from "../images/map-reviews/череповец.jpeg";
 import Yakutsk from "../images/map-reviews/якутск.jpeg";
-import Button from "../components/Button";
-import FireIconTwoLine from "../components/FireIconTwoLine";
+import review1 from "../images/map-reviews/анапа.jpeg";
+import review2 from "../images/map-reviews/геленджик.jpeg";
+import review3 from "../images/map-reviews/ейск.jpeg";
+import review4 from "../images/map-reviews/краснодар.jpeg";
+import review5 from "../images/map-reviews/набережные челны.jpeg";
+import review6 from "../images/map-reviews/нягань.jpeg";
+import review7 from "../images/map-reviews/пенза.jpeg";
+import Carusel from "../components/Carusel";
+
+const reviews = [
+  Adygea,
+  Anadyr,
+  Krasnodar,
+  Krasnoyarsk,
+  Rostov,
+  Stavropol,
+  Tyumen,
+  Vladymyr,
+  Volgograd,
+  Kazan,
+  Kyrov,
+  Moscow,
+  Nyagan,
+  Petrozavodsk,
+  Samara,
+  Surgut,
+  Cherepovets,
+  Yakutsk,
+  review1,
+  review2,
+  review3,
+  review4,
+  review5,
+  review6,
+  review7,
+];
 
 const Reviews = () => {
   const [deleviryModal, setDeleviryModal] = useState(false);
   const closeModalWindow = () => setDeleviryModal(false);
 
-  const { today } = useContext(TilteContext);
+  const { today, modalCaruselSettings } = useContext(TilteContext);
   return (
-    <div className={styles.bgContainer}>
-      <div id="reviews" className={styles.container}>
+    <div id="reviews" className={styles.bgContainer}>
+      <div className={styles.container}>
         <div className={styles.headMenu}>
           <Link
             to="headPage"
@@ -104,25 +139,33 @@ const Reviews = () => {
             <FireIconTwoLine />
             <div className={styles.mapContainer}>
               <img src={map} alt="map" />
-              <MapElem photo={Adygea} top={76.24} left={4.45} />
-              <MapElem photo={Anadyr} top={8.24} left={86.62} />
-              <MapElem photo={Krasnodar} top={73.55} left={3.45} />
-              <MapElem photo={Krasnoyarsk} top={73.36} left={51.33} />
-              <MapElem photo={Rostov} top={70.86} left={6.45} />
-              <MapElem photo={Stavropol} top={73.55} left={7.68} />
-              <MapElem photo={Tyumen} top={72.55} left={32.58} />
-              <MapElem photo={Vladymyr} top={55.72} left={14.8} />
-              <MapElem photo={Volgograd} top={72.72} left={11.8} />
-              <MapElem photo={Kazan} top={61.72} left={18.49} />
-              <MapElem photo={Kyrov} top={57.64} left={18.49} />
-              <MapElem photo={Moscow} top={58.64} left={13.26} />
-              <MapElem photo={Nyagan} top={53.64} left={26.26} />
-              <MapElem photo={Petrozavodsk} top={38.76} left={17.24} />
-              <MapElem photo={Samara} top={68.76} left={18.49} />
-              <MapElem photo={Surgut} top={56.64} left={38.21} />
-              <MapElem photo={Cherepovets} top={51.64} left={13.26} />
-              <MapElem photo={Yakutsk} top={53.64} left={66.28} />
+              <MapElem photo={Adygea} top={74.24} left={4.45} />
+              <MapElem photo={Anadyr} top={6.24} left={86.62} />
+              <MapElem photo={Krasnodar} top={71.55} left={3.45} />
+              <MapElem photo={Krasnoyarsk} top={71.36} left={51.33} />
+              <MapElem photo={Rostov} top={68.86} left={6.45} />
+              <MapElem photo={Stavropol} top={71.55} left={7.68} />
+              <MapElem photo={Tyumen} top={70.55} left={32.58} />
+              <MapElem photo={Vladymyr} top={53.72} left={14.8} />
+              <MapElem photo={Volgograd} top={70.72} left={11.8} />
+              <MapElem photo={Kazan} top={59.72} left={18.49} />
+              <MapElem photo={Kyrov} top={55.64} left={18.49} />
+              <MapElem photo={Moscow} top={56.64} left={13.26} />
+              <MapElem photo={Nyagan} top={51.64} left={26.26} />
+              <MapElem photo={Petrozavodsk} top={36.76} left={17.24} />
+              <MapElem photo={Samara} top={66.76} left={18.49} />
+              <MapElem photo={Surgut} top={54.64} left={38.21} />
+              <MapElem photo={Cherepovets} top={49.64} left={13.26} />
+              <MapElem photo={Yakutsk} top={51.64} left={66.28} />
             </div>
+
+            <div className={styles.reviewCaruselContainer}>
+              <Carusel
+                photos={reviews}
+                caruselSettings={modalCaruselSettings}
+              />
+            </div>
+
             <h4 className={styles.deliveryTitle}>
               <span className={styles.bold}>Доставка 0 рублей </span> по России
               до {today}

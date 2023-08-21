@@ -17,8 +17,8 @@ const WorkExamples = () => {
   const closeModalWindow = () => setCatalogModal(false);
   const { examplesPhotos, examplesCaruselSettings } = useContext(TilteContext);
   return (
-    <div className={styles.bgContainer}>
-      <div id="workExamples" className={styles.container}>
+    <div id="workExamples" className={styles.bgContainer}>
+      <div className={styles.container}>
         <div className={styles.headMenu}>
           <Link
             to="headPage"
@@ -76,7 +76,6 @@ const WorkExamples = () => {
           <Carusel
             photos={examplesPhotos}
             caruselSettings={examplesCaruselSettings}
-            width={"100%"}
           />
         </div>
         <p className={styles.question}>

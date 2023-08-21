@@ -3,12 +3,24 @@
   .form {
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
+    @media screen and (max-width: 984px) {
+      flex-direction: column;
+      width: 100%;
+    }
     .input {
-      width: 261px;
+      width: 361px;
       height: 62px;
       box-sizing: border-box;
       padding: 15px 30px;
+      @media screen and (max-width: 1105px) {
+        width: 261px;
+      }
+
+      @media screen and (max-width: 984px) {
+        width: 100%;
+        margin-bottom: 15px;
+      }
     }
     .btn {
       position: relative;
@@ -22,6 +34,13 @@
       line-height: 20px;
       transition: 0.5s ease-in-out;
       border: none;
+      color: #1c1d20;
+      @media screen and (max-width: 1140px) {
+        font-size: 14px;
+      }
+      @media screen and (max-width: 984px) {
+        width: 100%;
+      }
       cursor: pointer;
       &:hover {
         background: linear-gradient(180deg, #f96e09 0%, #ecd823 100%);

@@ -1,4 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-scroll";
+import { CSSTransition } from "react-transition-group";
+
+import BlackModal from "../components/BlackModal";
 
 import logo from "../images/logo.svg";
 import phoneIcon from "../images/phone-icon.svg";
@@ -8,6 +12,12 @@ import hourIcon from "../images/hour-icon.svg";
 import styles from "../scss/Footer.module.scss";
 
 const Footer = () => {
+  const [drawModal, setDrawModal] = useState(false);
+  const [phoneModal, setPhoneModal] = useState(false);
+
+  const closeDrawModalWindow = () => setDrawModal(false);
+  const closePhoneModalWindow = () => setPhoneModal(false);
+
   return (
     <div className={styles.bgContainer}>
       <div className={styles.container}>
@@ -105,7 +115,7 @@ const Footer = () => {
         </div>
         <div className={styles.bottomFootContainer}>
           <div className={styles.contactLinks}>
-            <a className={styles.contactLink} href="!#">
+            <a className={styles.contactLink} href="tel:+78002017578">
               <img className={styles.image} src={phoneIcon} alt="img" />
               <span className={styles.content} style={{ fontWeight: "bold" }}>
                 8-800-201-75-78
@@ -124,15 +134,22 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.links}>
-            <a className={styles.link} href="!#">
+            <button className={styles.link} onClick={() => setDrawModal(true)}>
               Получить чертеж и схему монтажа по Вашим размерами
-            </a>
-            <a className={styles.link} href="!#">
+            </button>
+            <Link
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              to="answers"
+              className={styles.link}
+            >
               Ответы на вопросы
-            </a>
-            <a className={styles.link} href="!#">
+            </Link>
+            <button className={styles.link} onClick={() => setPhoneModal(true)}>
               Заказать звонок
-            </a>
+            </button>
           </div>
         </div>
         <h3 className={styles.allRightsReserved}>
@@ -140,6 +157,34 @@ const Footer = () => {
           права защищены.
         </h3>
       </div>
+      <CSSTransition
+        in={drawModal}
+        classNames="modal"
+        timeout={600}
+        unmountOnExit
+      >
+        <BlackModal
+          title={"Получить чертеж"}
+          closeModal={closeDrawModalWindow}
+          message={false}
+          state={drawModal}
+          btn={"Отправить"}
+        />
+      </CSSTransition>
+      <CSSTransition
+        in={phoneModal}
+        classNames="modal"
+        timeout={600}
+        unmountOnExit
+      >
+        <BlackModal
+          title={"Заказать звонок"}
+          closeModal={closePhoneModalWindow}
+          message={false}
+          state={phoneModal}
+          btn={"Заказать"}
+        />
+      </CSSTransition>
     </div>
   );
 };

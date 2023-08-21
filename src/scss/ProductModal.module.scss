@@ -10,6 +10,7 @@
   justify-content: center;
   z-index: 200;
   color: #313337;
+
   .modalWindow {
     width: 1100px;
     min-height: 750px;
@@ -17,6 +18,14 @@
     background-color: #fff;
     position: relative;
     border-radius: 5px;
+    @media screen and (max-width: 1112px) {
+      width: 90%;
+      height: 100%;
+      min-height: max-content;
+      overflow-y: auto;
+      position: fixed;
+      top: 3%;
+    }
     .closeButton {
       position: absolute;
       left: 95%;
@@ -30,17 +39,36 @@
       &:hover {
         color: #000;
       }
+      @media screen and (max-width: 950px) {
+        left: 93%;
+      }
+      @media screen and (max-width: 680px) {
+        left: 90%;
+      }
+      @media screen and (max-width: 450px) {
+        left: 85%;
+      }
     }
     .modalWindowContent {
       display: flex;
       justify-content: space-between;
       margin: 90px 50px;
+      @media screen and (max-width: 1112px) {
+        flex-direction: column !important;
+      }
 
       .modalWindowLeftContent {
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        .photoContainer {
+          width: 400px;
+          @media screen and (max-width: 1112px) {
+            width: 100%;
+            height: max-content;
+          }
+        }
         .guarantee {
           margin: 15px 0;
           .guaranteeContent {
@@ -55,14 +83,27 @@
       .modalWindowRightContent {
         display: flex;
         flex-direction: column;
-
         margin-left: 45px;
         width: 50%;
+        @media screen and (max-width: 1112px) {
+          margin-left: 0;
+          margin-top: 20px;
+          width: 100%;
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+        }
+        @media screen and (max-width: 475px) {
+          font-size: 12px;
+        }
         .title {
           font-size: 36px;
           font-weight: 200;
           margin: 0;
           padding: 0;
+          @media screen and (max-width: 485px) {
+            font-size: 25px;
+          }
         }
         .about {
           font-size: 16px;
@@ -119,6 +160,12 @@
           align-items: center;
           justify-content: space-between;
           width: 80%;
+          @media screen and (max-width: 550px) {
+            width: 90%;
+          }
+          @media screen and (max-width: 450px) {
+            width: 100%;
+          }
           .existence {
             .existenceContent {
               padding: 0;
@@ -138,6 +185,15 @@
               font-weight: 800;
               font-size: 36px;
               margin-right: 5px;
+              @media screen and (max-width: 680px) {
+                font-size: 24px;
+              }
+              @media screen and (max-width: 550px) {
+                font-size: 18px;
+              }
+              @media screen and (max-width: 450px) {
+                font-size: 14px;
+              }
             }
           }
         }

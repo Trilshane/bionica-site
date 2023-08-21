@@ -1,15 +1,23 @@
-import { useRef, useEffect } from "react";
-import styles from "../scss/BlackModal.module.scss";
+import { useRef, useEffect, useState, useContext } from "react";
 import { RiCloseFill } from "react-icons/ri";
 
+import styles from "../scss/BlackModal.module.scss";
+import axios from "axios";
+import TilteContext from "./Context";
+
 const BlackModal = ({ title, closeModal, message, state, btn }) => {
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [messageModal, setMessageModal] = useState("");
+  const { setThanksModalIsOpen } = useContext(TilteContext);
+
   const modalRef = useRef();
   const blackModal = useRef();
 
   useEffect(() => {
     const clickOutside = (e) => {
       if (modalRef.current.contains(e.target)) {
-        console.log(1);
         if (!blackModal.current.contains(e.target)) {
           closeModal();
         }
@@ -24,9 +32,29 @@ const BlackModal = ({ title, closeModal, message, state, btn }) => {
   } else {
     document.body.style.overflowY = "inherit";
   }
+  const handleSubmit = (e) => {
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("phone", phone);
+    formData.append("email", mail);
+    formData.append("message", messageModal);
+    axios({
+      url: "/sendEmail.php",
+      method: "post",
+      data: formData,
+    })
+      .then((res) => {
+        closeModal();
+        setThanksModalIsOpen(true);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    e.preventDefault();
+  };
 
   return (
-    <div ref={modalRef} className={styles.container}>
+    <div ref={modalRef} onSubmit={handleSubmit} className={styles.container}>
       <div ref={blackModal} className={styles.blackModal}>
         <button onClick={closeModal} className={styles.closeBtn}>
           <RiCloseFill />
@@ -34,6 +62,8 @@ const BlackModal = ({ title, closeModal, message, state, btn }) => {
         <form className={styles.form}>
           <h1 className={styles.title}>{title}</h1>{" "}
           <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className={styles.input}
             type="text"
             name="name"
@@ -41,6 +71,8 @@ const BlackModal = ({ title, closeModal, message, state, btn }) => {
             required
           />
           <input
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             className={styles.input}
             type="tel"
             name="phone"
@@ -48,13 +80,17 @@ const BlackModal = ({ title, closeModal, message, state, btn }) => {
             required
           />{" "}
           <input
+            value={mail}
+            onChange={(e) => setMail(e.target.value)}
             className={styles.input}
             type="email"
-            name="mail"
+            name="email"
             placeholder="Введите email"
           />
           {message && (
             <textarea
+              value={messageModal}
+              onChange={(e) => setMessageModal(e.target.value)}
               style={{ resize: "none" }}
               className={styles.input}
               type="text"
@@ -64,7 +100,9 @@ const BlackModal = ({ title, closeModal, message, state, btn }) => {
               cols={22}
             />
           )}
-          <button className={styles.btn}>{btn}</button>
+          <button type="submit" className={styles.btn}>
+            {btn}
+          </button>
         </form>
       </div>
       ;

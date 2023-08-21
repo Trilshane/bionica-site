@@ -11,8 +11,8 @@ import styles from "../scss/Answers.module.scss";
 
 const Answers = () => {
   return (
-    <div className={styles.bgContainer}>
-      <div id="answers" className={styles.container}>
+    <div id="answers" className={styles.bgContainer}>
+      <div className={styles.container}>
         <div className={styles.headMenu}>
           <Link
             to="headPage"
@@ -264,9 +264,15 @@ const Answers = () => {
             прямо сейчас!
           </h1>
           <div className={styles.buttons}>
-            <Button content={"Читать наш Яндекс Дзен"} />
-            <Button content={"Наш Telegram канал"} />
-            <Button content={"Мы в Instagram"} />
+            <a href="https://dzen.ru/bionika_fire?utm_referer=bionika-fire.ru">
+              <button className={styles.btn}>Читать наш Яндекс Дзен</button>
+            </a>
+            <a href="https://t.me/biokamin1">
+              <button className={styles.btn}>Наш телеграмм канал</button>
+            </a>
+            <a href="https://www.instagram.com/bionika_biokamin/">
+              <button className={styles.btn}>Мы в Instagram</button>
+            </a>
           </div>
         </div>
       </div>

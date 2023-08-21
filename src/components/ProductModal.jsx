@@ -36,7 +36,7 @@ const ProductModal = ({
     document.addEventListener("click", clickOutside);
     return () => document.removeEventListener("click", clickOutside);
   }, [setModalIndex]);
-  console.log(modalIndex);
+ 
   return (
     <div ref={modalRef} className={styles.container}>
       <div ref={modalWindowRef} className={styles.modalWindow}>
@@ -45,11 +45,13 @@ const ProductModal = ({
         </button>
         <div className={styles.modalWindowContent}>
           <div className={styles.modalWindowLeftContent}>
-            <Carusel
-              photos={photos}
-              caruselSettings={modalCaruselSettings}
-              width={"400px"}
-            />
+            <div className={styles.photoContainer}>
+              <Carusel
+                photos={photos}
+                caruselSettings={modalCaruselSettings}
+                // width={"400px"}
+              />
+            </div>
             <div className={styles.guarantee}>
               <p className={styles.guaranteeContent}>
                 <span className={styles.bold}>Гарантия</span> 5 лет.

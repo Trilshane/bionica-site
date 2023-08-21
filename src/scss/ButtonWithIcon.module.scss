@@ -11,6 +11,10 @@
   transition: 0.5s ease-in-out;
   border: none;
   cursor: pointer;
+  color: #1c1d20;
+  @media screen and (max-width: 362px) {
+    font-size: 14px;
+  }
   &::before {
     content: "";
     position: absolute;

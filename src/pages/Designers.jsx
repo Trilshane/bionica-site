@@ -10,8 +10,8 @@ import SmallForm from "../components/SmallForm";
 
 const Designers = () => {
   return (
-    <div className={styles.bgContainer}>
-      <div id="designers" className={styles.container}>
+    <div id="designers" className={styles.bgContainer}>
+      <div className={styles.container}>
         <div className={styles.headMenu}>
           <Link
             to="headPage"
@@ -132,7 +132,11 @@ const Designers = () => {
             останется доволен!
           </p>
         </div>
-        <img src={disignersImg} alt="disignersImg" />
+        <img
+          className={styles.disignersImg}
+          src={disignersImg}
+          alt="disignersImg"
+        />
         <div className={styles.formContainer}>
           <h3 className={styles.formTitle}>
             <span className={styles.bold}>Оставьте заявку</span> с Вашими

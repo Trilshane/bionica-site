@@ -26,9 +26,9 @@ const BeautifulAndSafeContentArray = [
 
 const BeautifulAndSafe = () => {
   return (
-    <div className={styles.bgContainer}>
+    <div id="beautifulAndSafe" className={styles.bgContainer}>
       <div className={styles.container}>
-        <div id="beautifulAndSafe" className={styles.headMenu}>
+        <div className={styles.headMenu}>
           <Link
             to="headPage"
             spy={true}
@@ -122,7 +122,11 @@ const BeautifulAndSafe = () => {
               <h1 className={styles.title}>{elem.title}</h1>
               <FireIconOneLine />
               <p className={styles.firstContent}>{elem.firstContent}</p>
-              <img src={elem.img} alt="catalogImg" />
+              <img
+                className={styles.contentElemImg}
+                src={elem.img}
+                alt="catalogImg"
+              />
               <p className={styles.secondContent}>{elem.secondContent}</p>
             </div>
           ))}

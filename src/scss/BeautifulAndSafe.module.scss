@@ -8,12 +8,23 @@
   background-image: url(../images/catalog-bg.jpg);
   background-size: 100% 100%;
   padding: 220px 0 255px;
+  @media screen and (max-width: 1080px) {
+    margin-top: -220px;
+    padding-top: 270px;
+  }
   z-index: inherit;
   .container {
     margin: 0 15%;
+    @media screen and (max-width: 1798px) {
+      margin: 0 5%;
+    }
     .headMenu {
       display: flex;
       align-items: center;
+      @media screen and (max-width: 978px) {
+        display: none;
+      }
+
       .active {
         color: #fff !important;
       }
@@ -23,6 +34,19 @@
         text-decoration: none;
         color: #f2a718;
         margin: 0 10px;
+        @media screen and (max-width: 1353px) {
+          margin: 0 5px;
+        }
+        @media screen and (max-width: 1253px) {
+          font-size: 14px;
+        }
+        @media screen and (max-width: 1135px) {
+          font-size: 12px;
+        }
+        @media screen and (max-width: 1019px) {
+          margin: 0 3px;
+        }
+
         cursor: pointer;
         .icon {
           margin-right: 5px;
@@ -34,18 +58,42 @@
       display: flex;
       justify-content: space-between;
       width: 115%;
+      @media screen and (max-width: 1795px) {
+        width: 100%;
+      }
+      @media screen and (max-width: 1599px) {
+        flex-direction: column;
+        width: 100%;
+      }
 
       .contentElem {
         .title {
           font-size: 46px;
           font-weight: 900;
+          @media screen and (max-width: 500px) {
+            font-size: 32px;
+          }
         }
         .firstContent {
           font-size: 25px;
+          @media screen and (max-width: 500px) {
+            font-size: 18px;
+          }
+        }
+        .contentElemImg {
+          @media screen and (max-width: 1410px) {
+            width: 90%;
+          }
         }
         .secondContent {
           font-size: 21px;
           width: 80%;
+          @media screen and (max-width: 1410px) {
+            width: 100%;
+          }
+          @media screen and (max-width: 500px) {
+            font-size: 16px;
+          }
         }
       }
     }

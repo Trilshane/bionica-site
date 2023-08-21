@@ -1,30 +1,46 @@
-a {
-  text-decoration: none;
-}
 .container {
   display: flex;
   padding: 10px 0 12px 0;
   justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  height: 30px;
+  z-index: 200;
+  @media screen and (max-width: 1309px) {
+    justify-content: space-between;
+    padding: 10px 5px 12px 5px;
+    gap: 1px;
+  }
+  @media screen and (max-width: 970px) {
+    display: none;
+  }
   .contactLinks {
     display: flex;
     align-items: center;
     .contactLink {
       color: #1c1d20;
       padding-right: 30px;
+
       .content {
+        font-family: "Mulish";
         font-size: 14px;
+        @media screen and (max-width: 1058px) {
+          font-size: 12px;
+        }
       }
     }
   }
   .links {
     display: flex;
-
     border-left: 1px solid #eff4f7;
   }
   .link {
     cursor: pointer;
     border: none;
-    font-size: 14px;
+    font-family: "Mulish";
+    font-size: 13px;
     position: relative;
     color: #1c1d20;
     background: linear-gradient(
@@ -35,6 +51,9 @@ a {
     border-radius: 0px 3px 3px 0px;
     padding: 6px 24px 9px 24px;
     transition: 0.5s;
+    @media screen and (max-width: 1058px) {
+      font-size: 12px;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -48,6 +67,11 @@ a {
     }
     &:hover {
       background: #eff4f7;
+    }
+    .spanLink {
+      @media screen and (max-width: 1309px) {
+        display: none;
+      }
     }
   }
 }

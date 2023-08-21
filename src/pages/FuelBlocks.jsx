@@ -158,8 +158,8 @@ const FuelBlocks = () => {
   }, [materialSelectIsActive, depthSelectIsActive, coverTypeSelectActive]);
 
   return (
-    <div className={styles.bgContainer}>
-      <div id="fuelBlocks" className={styles.container}>
+    <div id="fuelBlocks" className={styles.bgContainer}>
+      <div className={styles.container}>
         <div className={styles.headMenu}>
           <Link
             to="headPage"

@@ -8,8 +8,8 @@ import styles from "../scss/FireplaceWarranty.module.scss";
 
 const FireplaceWarranty = () => {
   return (
-    <div className={styles.bgContainer}>
-      <div id="fireplaceWarranty" className={styles.container}>
+    <div id="fireplaceWarranty" className={styles.bgContainer}>
+      <div className={styles.container}>
         <div className={styles.headMenu}>
           <Link
             to="headPage"

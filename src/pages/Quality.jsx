@@ -37,8 +37,8 @@ const Quality = () => {
   const [videoInstructionModal, setVideoInstructionModal] = useState(false);
   const closeModalWindow = () => setVideoInstructionModal(false);
   return (
-    <div className={styles.bgContainer}>
-      <div id="quality" className={styles.container}>
+    <div id="quality" className={styles.bgContainer}>
+      <div className={styles.container}>
         <div className={styles.headMenu}>
           <Link
             to="headPage"
@@ -110,7 +110,7 @@ const Quality = () => {
           <FireIconOneLine />
           <div className={styles.videosContainer}>
             {videoElems.map((videoElem) => (
-              <div className={styles.videoElem}>
+              <div className={styles.videoElem} key={videoElem.firstTitle}>
                 <h5 className={styles.videoTitle}>{videoElem.firstTitle}</h5>
                 <video
                   className={styles.video}

@@ -15,10 +15,11 @@ const HeaderTop = () => {
 
   const closeDrawModalWindow = () => setDrawModal(false);
   const closePhoneModalWindow = () => setPhoneModal(false);
+
   return (
     <div className={styles.container}>
       <div className={styles.contactLinks}>
-        <a className={styles.contactLink} href="!#">
+        <a className={styles.contactLink} href="tel:+78002017578">
           <img className={styles.image} src={phoneIcon} alt="img" />
           <span className={styles.content} style={{ fontWeight: "bold" }}>
             8-800-201-75-78
@@ -35,7 +36,10 @@ const HeaderTop = () => {
       </div>
       <div className={styles.links}>
         <button onClick={() => setDrawModal(true)} className={styles.link}>
-          Получить чертеж и схему монтажа по Вашим размерами
+          Получить чертеж{" "}
+          <span className={styles.spanLink}>
+            и схему монтажа по Вашим размерами
+          </span>
         </button>
         <Link
           spy={true}

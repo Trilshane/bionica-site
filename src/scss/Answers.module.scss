@@ -2,18 +2,36 @@
   position: relative;
   top: 0;
   left: 0;
-  margin-top: -310px;
+  margin-top: -350px;
   width: 100%;
   min-height: 900px;
   background-image: url(../images/answers-bg.png);
   background-size: 100% 100%;
   padding: 220px 0 255px;
   z-index: 2;
+  @media screen and (max-width: 1000px) {
+    margin-top: -370px;
+    background-size: cover;
+    background-position: center;
+  }
+  @media screen and (max-width: 974px) {
+    margin-top: -490px;
+  }
+  // @media screen and (max-width: 836px) {
+  //   margin-top: -390px;
+  // }
   .container {
     margin: 0 15%;
+    @media screen and (max-width: 1736px) {
+      margin: 0 5%;
+    }
     .headMenu {
       display: flex;
       align-items: center;
+      @media screen and (max-width: 978px) {
+        display: none;
+      }
+
       .active {
         color: #fff !important;
       }
@@ -23,6 +41,19 @@
         text-decoration: none;
         color: #f2a718;
         margin: 0 10px;
+        @media screen and (max-width: 1353px) {
+          margin: 0 5px;
+        }
+        @media screen and (max-width: 1253px) {
+          font-size: 14px;
+        }
+        @media screen and (max-width: 1135px) {
+          font-size: 12px;
+        }
+        @media screen and (max-width: 1019px) {
+          margin: 0 3px;
+        }
+
         cursor: pointer;
         .icon {
           margin-right: 5px;
@@ -32,6 +63,10 @@
     .title {
       font-size: 46px;
       font-weight: 200;
+      @media screen and (max-width: 944px) {
+        font-size: 32px;
+        margin-top: 60px;
+      }
       .bold {
         font-weight: 900;
       }
@@ -40,6 +75,13 @@
       margin-top: 35px;
       display: flex;
       justify-content: space-between;
+      @media screen and (max-width: 1344px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      @media screen and (max-width: 944px) {
+        grid-template-columns: 1fr;
+      }
       .answersColumn {
         width: 350px;
         display: flex;
@@ -54,14 +96,59 @@
       .buttonsTitle {
         font-size: 40px;
         font-weight: 300;
+        text-align: center;
+        @media screen and (max-width: 944px) {
+          font-size: 30px;
+        }
         .bold {
           font-weight: 900;
         }
       }
       .buttons {
         display: flex;
-        width: 50%;
+        width: 60%;
         justify-content: space-between;
+        @media screen and (max-width: 1456px) {
+          width: 70%;
+        }
+        @media screen and (max-width: 1032px) {
+          width: 90%;
+        }
+        @media screen and (max-width: 900px) {
+          width: 100%;
+        }
+        @media screen and (max-width: 760px) {
+          flex-direction: column;
+          justify-content: center;
+          width: 100%;
+          gap: 10px;
+        }
+        @media screen and (max-width: 500px) {
+          width: 90%;
+        }
+        a {
+          .btn {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding: 19px 28px;
+            background: linear-gradient(0deg, #f96e09 0%, #ecd823 100%);
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            transition: 0.5s ease-in-out;
+            border: none;
+            cursor: pointer;
+            color: #1c1d20;
+            @media screen and (max-width: 760px) {
+              width: 100%;
+            }
+            &:hover {
+              background: linear-gradient(180deg, #f96e09 0%, #ecd823 100%);
+            }
+          }
+        }
       }
     }
   }

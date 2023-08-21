@@ -16,5 +16,9 @@
   .answer {
     width: 400px;
     padding-left: 20px;
+    @media screen and (max-width: 944px) {
+      padding-left: 0;
+      width: 95%;
+    }
   }
 }

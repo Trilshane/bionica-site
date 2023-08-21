@@ -1,0 +1,269 @@
+.bgContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 900px;
+  background-image: url(../images//bg-success.jpg);
+  background-size: 100% 100%;
+  padding: 4% 0;
+  z-index: 1000;
+
+  .imgDirector {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 500px;
+    z-index: 44;
+    @media screen and (max-width: 1595px) {
+      width: 400px;
+    }
+    @media screen and (max-width: 1080px) {
+      left: 5%;
+    }
+    @media screen and (max-width: 974px) {
+      left: 50%;
+    }
+    @media screen and (max-width: 905px) {
+      width: 350px;
+    }
+    @media screen and (max-width: 669px) {
+      width: 300px;
+      top: 20%;
+    }
+    @media screen and (max-width: 537px) {
+      left: 45%;
+    }
+    @media screen and (max-width: 499px) {
+      width: 250px;
+    }
+    @media screen and (max-width: 451px) {
+      left: 50%;
+      top: 25%;
+    }
+    @media screen and (max-width: 381px) {
+      left: 48%;
+      top: 23%;
+    }
+  }
+  .title {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: calc(28px + 36 * ((100vw - 320px) / (1920 - 320)));
+    line-height: 90px;
+    text-align: right;
+    background: linear-gradient(180deg, #ecd823 0%, #f97c09 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 15%;
+  }
+  .contentContainer {
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    pointer-events: auto;
+    padding-bottom: 25px;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+    background: linear-gradient(270deg, #333333 0%, #1a1a1a 100%);
+    @media screen and (max-width: 974px) {
+      align-items: flex-start;
+      padding-left: 25px;
+    }
+    .closeBtn {
+      color: #fff;
+      background: none;
+      border: none;
+      font-size: 50px;
+      position: absolute;
+      top: 3%;
+      left: 95%;
+      cursor: pointer;
+      transition: 0.6s;
+      @media screen and (max-width: 1461px) {
+        left: 93%;
+      }
+      @media screen and (max-width: 974px) {
+        left: 91%;
+      }
+      @media screen and (max-width: 669px) {
+        left: 89%;
+      }
+      @media screen and (max-width: 537px) {
+        left: 87%;
+      }
+      @media screen and (max-width: 451px) {
+        left: 85%;
+      }
+      @media screen and (max-width: 391px) {
+        left: 82%;
+      }
+
+      &:hover {
+        color: #7d838a;
+      }
+    }
+
+    .texContainer {
+      margin-top: 25px;
+      width: 50%;
+      padding-right: 7%;
+      @media screen and (max-width: 1240px) {
+        left: 93%;
+      }
+
+      .titleContainer {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 600;
+        font-size: calc(24px + 26 * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(24px + 26 * ((100vw - 320px) / (1920 - 320)));
+        text-align: right;
+        background: linear-gradient(180deg, #ecd823 0%, #f97c09 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        margin-bottom: 20px;
+        @media screen and (max-width: 974px) {
+          text-align: left;
+        }
+        @media screen and (max-width: 905px) {
+          font-size: 32px;
+        }
+        @media screen and (max-width: 537px) {
+          font-size: 24px;
+        }
+      }
+      .content {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: calc(28px + 26 * ((100vw - 320px) / (1920 - 320)));
+        text-align: right;
+        color: #ffffff;
+        @media screen and (max-width: 974px) {
+          text-align: left;
+        }
+        @media screen and (max-width: 905px) {
+          font-size: 20px;
+        }
+        @media screen and (max-width: 537px) {
+          font-size: 16px;
+        }
+        .color {
+          background: linear-gradient(180deg, #ecd823 0%, #f97c09 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          max-width: 200px;
+        }
+      }
+    }
+    .catalogContainer {
+      margin-top: -20px;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-right: 7%;
+      @media screen and (max-width: 1240px) {
+        width: 50%;
+      }
+      @media screen and (max-width: 974px) {
+        align-items: flex-start;
+      }
+
+      .CatalogTitle {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: calc(22px + 26 * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(20px + 57 * ((100vw - 320px) / (1920 - 320)));
+        background: linear-gradient(180deg, #ecd823 0%, #f97c09 49.68%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+        @media screen and (max-width: 1461px) {
+          font-size: 32px;
+        }
+        @media screen and (max-width: 1240px) {
+          text-align: right;
+        }
+        @media screen and (max-width: 974px) {
+          text-align: left;
+        }
+        @media screen and (max-width: 905px) {
+          font-size: 24px;
+        }
+        @media screen and (max-width: 537px) {
+          font-size: 20px;
+        }
+        @media screen and (max-width: 381px) {
+          font-size: 18px;
+        }
+      }
+      .btn {
+        font-family: "Montserrat";
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 19px 28px;
+        background: linear-gradient(0deg, #f96e09 0%, #ecd823 100%);
+        border-radius: 3px;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 20px;
+        transition: 0.5s ease-in-out;
+        border: none;
+        width: 250px;
+        color: #1c1d20;
+        cursor: pointer;
+        @media screen and (max-width: 603px) {
+          font-size: 16px;
+          width: 200px;
+        }
+        @media screen and (max-width: 537px) {
+          width: 150px;
+        }
+
+        &:hover {
+          background: linear-gradient(180deg, #f96e09 0%, #ecd823 100%);
+        }
+      }
+    }
+    .initials {
+      font-family: "Montserrat";
+      font-size: 36px;
+      font-weight: 300;
+      font-style: italic;
+      padding-right: 7%;
+      @media screen and (max-width: 1080px) {
+        font-size: 30px;
+      }
+      @media screen and (max-width: 761px) {
+        font-size: 24px;
+      }
+      @media screen and (max-width: 603px) {
+        font-size: 20px;
+      }
+      @media screen and (max-width: 537px) {
+        font-size: 18px;
+      }
+      @media screen and (max-width: 499px) {
+        font-size: 16px;
+      }
+      @media screen and (max-width: 391px) {
+        font-size: 14px;
+      }
+    }
+  }
+}

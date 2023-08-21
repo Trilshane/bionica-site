@@ -9,11 +9,22 @@
   background-size: 100% 100%;
   padding: 220px 0 255px;
   z-index: inherit;
+  @media screen and (max-width: 1120px) {
+    margin-top: -200px;
+    padding-top: 250px;
+  }
   .container {
     margin: 0 15%;
+    @media screen and (max-width: 1745px) {
+      margin: 0 5%;
+    }
     .headMenu {
       display: flex;
       align-items: center;
+      @media screen and (max-width: 978px) {
+        display: none;
+      }
+
       .active {
         color: #fff !important;
       }
@@ -23,6 +34,19 @@
         text-decoration: none;
         color: #f2a718;
         margin: 0 10px;
+        @media screen and (max-width: 1353px) {
+          margin: 0 5px;
+        }
+        @media screen and (max-width: 1253px) {
+          font-size: 14px;
+        }
+        @media screen and (max-width: 1135px) {
+          font-size: 12px;
+        }
+        @media screen and (max-width: 1019px) {
+          margin: 0 3px;
+        }
+
         cursor: pointer;
         .icon {
           margin-right: 5px;
@@ -32,6 +56,9 @@
     .title {
       font-size: 46px;
       font-weight: 200;
+      @media screen and (max-width: 549px) {
+        font-size: 32px;
+      }
       .bold {
         font-weight: 900;
       }
@@ -40,11 +67,25 @@
       display: flex;
       justify-content: space-between;
       width: 95%;
+      @media screen and (max-width: 1376px) {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
       .iconContainer {
         width: 200px;
         height: 57px;
         border: 15px solid rgba($color: gray, $alpha: 0.2);
         border-radius: 5px;
+        @media screen and (max-width: 549px) {
+          width: 150px;
+          height: auto;
+        }
+        @media screen and (max-width: 459px) {
+          width: 100px;
+          height: auto;
+          border: 5px solid rgba($color: gray, $alpha: 0.2);
+        }
         img {
           width: 100%;
         }
@@ -53,6 +94,9 @@
     .textContent {
       font-size: 26px;
       font-weight: 400;
+      @media screen and (max-width: 549px) {
+        font-size: 18px;
+      }
       .bold {
         font-weight: 900;
       }

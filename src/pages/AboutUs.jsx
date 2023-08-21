@@ -49,8 +49,8 @@ const aboutElements = [
 
 const AboutUs = () => {
   return (
-    <div className={styles.container}>
-      <div id="aboutUs" className={styles.marginContainer}>
+    <div id="aboutUs" className={styles.container}>
+      <div className={styles.marginContainer}>
         <div className={styles.headMenu}>
           <Link
             to="headPage"
@@ -115,8 +115,8 @@ const AboutUs = () => {
               дизайнер
             </p>
           </div>
-          <ConsultationForm />
         </div>
+        <ConsultationForm content={"Получить бесплатную консультацию"} />
       </div>
     </div>
   );

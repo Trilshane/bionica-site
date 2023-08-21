@@ -1,9 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import TilteContext from "./components/Context";
-import HeaderTop from "./components/HeaderTop";
 import HeadPage from "./pages/HeadPage";
 import ProductPage from "./pages/ProductPage";
+import AboutUs from "./pages/AboutUs";
+import WorkExamples from "./pages/WorkExamples";
+import Reviews from "./pages/Reviews";
+import Quality from "./pages/Quality";
+import FuelBlocks from "./pages/FuelBlocks";
+import BeautifulAndSafe from "./pages/BeautifulAndSafe";
+import Delivery from "./pages/Delivery";
+import PaymentAndDelivery from "./pages/PaymentAndDelivery";
+import FireplaceWarranty from "./pages/FireplaceWarranty";
+import Designers from "./pages/Designers";
+import Answers from "./pages/Answers";
+import Footer from "./pages/Footer";
+import ThanksModal from "./components/ThanksModal";
 
 import styles from "./scss/App.module.scss";
 
@@ -77,22 +90,20 @@ import examplePhoto3 from "./images/swiper-img3.jpeg";
 import examplePhoto4 from "./images/swiper-img4.jpeg";
 import examplePhoto5 from "./images/swiper-img5.jpeg";
 
-import AboutUs from "./pages/AboutUs";
-import WorkExamples from "./pages/WorkExamples";
-import Reviews from "./pages/Reviews";
-import Quality from "./pages/Quality";
-import FuelBlocks from "./pages/FuelBlocks";
-import BeautifulAndSafe from "./pages/BeautifulAndSafe";
-import Delivery from "./pages/Delivery";
-import PaymentAndDelivery from "./pages/PaymentAndDelivery";
-import FireplaceWarranty from "./pages/FireplaceWarranty";
-import Designers from "./pages/Designers";
-import Answers from "./pages/Answers";
-import Footer from "./pages/Footer";
 function App() {
   const [category, setCategory] = useState(0);
   const [modalIndex, setModalIndex] = useState();
   const [onClickModal, setOnClickModal] = useState(false);
+  const [thanksModalIsOpen, setThanksModalIsOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWidth = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleWidth);
+    return () => window.removeEventListener("resize", handleWidth);
+  }, []);
 
   //получаем сегодняшнюю дату
   let today = new Date();
@@ -338,6 +349,7 @@ function App() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    adaptiveHeight: true,
   };
 
   const currentProducts = products.filter((product) => {
@@ -422,10 +434,12 @@ function App() {
         arr3,
         onClickModal,
         setOnClickModal,
+        thanksModalIsOpen,
+        setThanksModalIsOpen,
+        width,
       }}
     >
       <div className={styles.app}>
-        <HeaderTop />
         <HeadPage />
         <ProductPage />
         <AboutUs />
@@ -440,6 +454,14 @@ function App() {
         <Designers />
         <Answers />
         <Footer />
+        <CSSTransition
+          in={thanksModalIsOpen}
+          classNames="modal"
+          timeout={600}
+          unmountOnExit
+        >
+          <ThanksModal />
+        </CSSTransition>
       </div>
     </TilteContext.Provider>
   );
