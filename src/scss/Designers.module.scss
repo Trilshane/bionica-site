@@ -9,8 +9,8 @@
   background-size: 100% 100%;
   padding: 220px 0 380px;
   z-index: inherit;
-  @media screen and (max-width: 974px) {
-    padding-bottom: 480px;
+  @media screen and (max-width: 1344px) {
+    background-size: 100% 120%;
   }
   .container {
     margin: 0 15%;
