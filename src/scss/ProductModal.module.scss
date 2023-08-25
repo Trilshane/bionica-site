@@ -56,6 +56,9 @@
       @media screen and (max-width: 1112px) {
         flex-direction: column !important;
       }
+      @media screen and (max-width: 644px) {
+        margin: 55px 30px;
+      }
 
       .modalWindowLeftContent {
         position: relative;

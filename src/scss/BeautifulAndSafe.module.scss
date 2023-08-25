@@ -57,16 +57,16 @@
       margin-top: 30px;
       display: flex;
       justify-content: space-between;
-      width: 115%;
-      @media screen and (max-width: 1795px) {
-        width: 100%;
-      }
-      @media screen and (max-width: 1599px) {
+      @media screen and (max-width: 1098px) {
         flex-direction: column;
-        width: 100%;
+        align-items: center;
       }
 
       .contentElem {
+        width: 80%;
+        @media screen and (max-width: 1098px) {
+          width: 100%;
+        }
         .title {
           font-size: 46px;
           font-weight: 900;
@@ -76,6 +76,9 @@
         }
         .firstContent {
           font-size: 25px;
+          @media screen and (max-width: 1344px) {
+            font-size: 20px;
+          }
           @media screen and (max-width: 500px) {
             font-size: 18px;
           }

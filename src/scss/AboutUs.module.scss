@@ -90,6 +90,11 @@
       .aboutUsElement {
         display: flex;
         align-items: center;
+        img {
+          @media screen and (max-width: 650px) {
+            width: 55px;
+          }
+        }
 
         .aboutUsElementContent {
           margin-left: 40px;

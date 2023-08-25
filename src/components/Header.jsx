@@ -7,7 +7,6 @@ import styles from "../scss/Header.module.scss";
 import logo from "../images/logo.svg";
 import phoneIcon from "../images/phone-icon.svg";
 import BlackModal from "./BlackModal";
-import adaptiveBtn from "../images/bars.svg";
 
 const Header = () => {
   const [directorMessageModal, setDirectorMessageModal] = useState(false);
@@ -154,13 +153,31 @@ const Header = () => {
               </span>
             </a>
           </div>
-          <div
+          <button
             className={styles.navBarAdaptive}
             onClick={() => setNavBar(!navBar)}
           >
             {" "}
-            <img src={adaptiveBtn} alt="adaptivbtn" />{" "}
-          </div>
+            <span
+              style={navBar ? { transform: "rotate(45deg)", top: "5px" } : {}}
+              className={styles.line}
+            ></span>
+            <span
+              style={navBar ? { opacity: 0, height: 0 } : {}}
+              className={styles.line}
+            ></span>
+            <span
+              style={
+                navBar
+                  ? {
+                      transform: "rotate(-45deg)",
+                      top: "-6px",
+                    }
+                  : {}
+              }
+              className={styles.line}
+            ></span>
+          </button>
         </div>
       </div>
       <CSSTransition

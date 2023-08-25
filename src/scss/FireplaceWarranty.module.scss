@@ -15,7 +15,11 @@
     background-size: cover;
     background-position: center;
   }
-  @media screen and (max-width: 674px) {
+
+  @media screen and (max-width: 727px) {
+    padding-bottom: 110px;
+  }
+  @media screen and (max-width: 500px) {
     padding-top: 150px;
   }
   .container {

@@ -16,6 +16,9 @@
     background-position: center;
     padding-bottom: 100px;
   }
+  @media screen and (max-width: 500px) {
+    padding-top: 250px;
+  }
 
   .container {
     margin: 0 15%;
@@ -62,6 +65,9 @@
         font-size: 46px;
         font-weight: 200;
         text-align: center;
+        @media screen and (max-width: 500px) {
+          font-size: 32px;
+        }
         .bold {
           font-weight: 900;
         }
@@ -85,6 +91,9 @@
               width: 100%;
               margin-right: 0;
             }
+            @media screen and (max-width: 500px) {
+              text-align: left;
+            }
           }
           .rightText {
             text-align: left;
@@ -93,6 +102,9 @@
             @media screen and (max-width: 1046px) {
               text-align: center;
               margin-left: 0;
+            }
+            @media screen and (max-width: 500px) {
+              text-align: left;
             }
           }
         }
@@ -106,6 +118,9 @@
           //   width: 80%;
           //   height: 100%;
           // }
+          @media screen and (max-width: 500px) {
+            order: -1;
+          }
         }
         .downContent {
           display: flex;
