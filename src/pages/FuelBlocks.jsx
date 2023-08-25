@@ -63,7 +63,7 @@ const FuelBlocks = () => {
 
   const closeModalWindow = () => setOrderModal(false);
 
-  const [length, setLenth] = useState(3);
+  const [length, setLenth] = useState(lengthArraySteps[19]);
   const rangeRef = useRef("");
   const materialRef = useRef("");
   const depthRef = useRef("");
@@ -472,7 +472,7 @@ const FuelBlocks = () => {
             <div className={styles.priceZone}>
               {" "}
               <p className={styles.price}>
-                {currentPrice ? currentPrice : 135000}{" "}
+                {currentPrice}
                 <span className={styles.small}>рублей</span>
               </p>{" "}
               <Button
