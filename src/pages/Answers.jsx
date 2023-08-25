@@ -2,7 +2,6 @@ import { Link } from "react-scroll";
 
 import FireIconOneLine from "../components/FireIconOneLine";
 import Question from "../components/Question";
-import Button from "../components/Button";
 
 import homeIcon from "../images/house-icon.svg";
 import menuLine from "../images/top-menu-bar-line.svg";
