@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState, useContext } from "react";
 import { RiCloseFill } from "react-icons/ri";
-
-import styles from "../scss/BlackModal.module.scss";
 import axios from "axios";
+import styles from "../scss/BlackModal.module.scss";
+
 import TilteContext from "./Context";
 
 const BlackModal = ({ title, closeModal, message, state, btn }) => {
@@ -38,6 +38,7 @@ const BlackModal = ({ title, closeModal, message, state, btn }) => {
     formData.append("phone", phone);
     formData.append("email", mail);
     formData.append("message", messageModal);
+
     axios({
       url: "/sendEmail.php",
       method: "post",
@@ -60,7 +61,7 @@ const BlackModal = ({ title, closeModal, message, state, btn }) => {
           <RiCloseFill />
         </button>
         <form className={styles.form}>
-          <h1 className={styles.title}>{title}</h1>{" "}
+          <h3 className={styles.title}>{title}</h3>{" "}
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}

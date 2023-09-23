@@ -20,6 +20,7 @@ const MapElem = ({ photo, top, left }) => {
             ? { display: "none" }
             : { width: "18px", transition: ".5s" }
         }
+        loading="lazy"
         src={location}
         alt="location"
       />
@@ -40,6 +41,7 @@ const MapElem = ({ photo, top, left }) => {
                 width: "18px",
               }
         }
+        loading="lazy"
         src={photo}
         alt="review"
       />

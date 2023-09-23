@@ -1,0 +1,173 @@
+.bgContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: -170px;
+  height: 150%;
+  background-image: url(../images/footer-bg.jpg);
+  background-size: 100% 100%;
+  padding: 220px 0 0 0;
+
+  @media screen and (max-width: 1343px) {
+    margin-top: -190px;
+  }
+  @media screen and (max-width: 601px) {
+    padding: 190px 0 0 0;
+  }
+  .container {
+    width: 100%;
+    padding: 17px 0 27px 0;
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.3s all ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footerContent {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 70%;
+      @media screen and (max-width: 1553px) {
+        flex-direction: column;
+      }
+      @media screen and (max-width: 601px) {
+        width: 90%;
+      }
+      .logoContainer {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        width: 40%;
+        @media screen and (max-width: 1553px) {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .img {
+          height: 56px;
+        }
+        .logoContent {
+          font-size: 14px;
+          font-weight: 400;
+          margin-top: 10px;
+          color: rgba($color: #fff, $alpha: 0.3);
+          text-align: left;
+          @media screen and (max-width: 601px) {
+            font-size: 12px;
+          }
+        }
+      }
+      .menuContainer {
+        width: 100%;
+        @media screen and (max-width: 1103px) {
+          display: none;
+        }
+        .navBar {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+
+          .navBarElem {
+            list-style: none;
+            .navElem {
+              text-decoration: none;
+              color: #fff;
+              font-size: 14px;
+              font-weight: 400;
+              transition: 0.5s;
+              cursor: pointer;
+              &:hover {
+                color: #f2a718;
+              }
+            }
+          }
+        }
+      }
+    }
+    .bottomFootContainer {
+      display: flex;
+      padding: 10px 0 12px 0;
+      justify-content: center;
+      @media screen and (max-width: 1553px) {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+      }
+      .contactLinks {
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 601px) {
+          flex-direction: column;
+          row-gap: 5px;
+        }
+        .contactLink {
+          color: #eff4f7;
+          padding-right: 30px;
+          text-decoration: none;
+          .image {
+            @media screen and (max-width: 601px) {
+              display: none;
+            }
+          }
+          .content {
+            font-size: 14px;
+          }
+        }
+      }
+      .links {
+        display: flex;
+        border-left: 1px solid #eff4f7;
+        @media screen and (max-width: 1553px) {
+          border-left: none;
+        }
+        @media screen and (max-width: 797px) {
+          display: none;
+        }
+      }
+      .link {
+        border: none;
+        font-size: 14px;
+        position: relative;
+        color: #eff4f7;
+        transition: 0.5s;
+        background: linear-gradient(
+          267.74deg,
+          rgba(239, 244, 247, 0.1) 0.47%,
+
+          rgba(255, 255, 255, 0) 35.3%
+        );
+        border-radius: 0px 3px 3px 0px;
+        padding: 6px 24px 9px 24px;
+        transition: 0.5s;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          background-image: url("../images/vector.svg");
+          width: 100%;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-position: top right;
+        }
+        &:hover {
+          background: linear-gradient(
+            130.74deg,
+            rgba(239, 244, 247, 0.1) 0.47%,
+            rgba(255, 255, 255, 0) 35.3%
+          );
+          color: #f2a718;
+        }
+      }
+    }
+    .allRightsReserved {
+      color: rgba($color: #fff, $alpha: 0.3);
+      font-size: 14px;
+      @media screen and (max-width: 797px) {
+        text-align: center;
+        margin: 0 15px;
+      }
+    }
+  }
+}

@@ -106,6 +106,7 @@
           font-size: 16px;
           color: #1c1d20;
           padding: 24px 0;
+          margin: 0;
           background-color: #fff;
           font-weight: 700;
           position: relative;
@@ -115,6 +116,7 @@
           border-radius: 5px;
           border: none;
           cursor: pointer;
+          text-align: center;
 
           @media screen and (max-width: 762px) {
             width: 100%;
@@ -220,7 +222,7 @@
               margin: 0;
               padding: 0;
             }
-            h1 {
+            h3 {
               padding: 0;
               margin: 0;
               color: #313337;

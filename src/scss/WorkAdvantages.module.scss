@@ -1,0 +1,66 @@
+.bgContainer {
+  background-image: url(../images/about-bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  margin-top: -20%;
+  position: relative;
+  z-index: 198;
+  @media screen and (max-width: 1000px) {
+    margin-top: -220px;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 100px;
+  }
+  .container {
+    padding: 10% 15%;
+    @media screen and (max-width: 1586px) {
+      padding: 10% 5% 15% 5%;
+    }
+    @media screen and (max-width: 930px) {
+      padding-top: 15%;
+    }
+    @media screen and (max-width: 650px) {
+      padding-top: 25%;
+    }
+    @media screen and (max-width: 500px) {
+      padding-top: 40%;
+    }
+    @media screen and (max-width: 400px) {
+      padding-top: 50%;
+    }
+  }
+  .title {
+    font-size: 48px;
+    font-weight: 800;
+  }
+  .advantageContainer {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    @media screen and (max-width: 980px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 630px) {
+      grid-template-columns: 1fr;
+    }
+    .advantage {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      img {
+        width: 70px;
+        height: 70px;
+      }
+      p {
+        width: 70%;
+        font-size: 18px;
+      }
+    }
+  }
+  h4 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}

@@ -2,20 +2,7 @@ import { useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import TilteContext from "./components/Context";
-import HeadPage from "./pages/HeadPage";
-import ProductPage from "./pages/ProductPage";
-import AboutUs from "./pages/AboutUs";
-import WorkExamples from "./pages/WorkExamples";
-import Reviews from "./pages/Reviews";
-import Quality from "./pages/Quality";
-import FuelBlocks from "./pages/FuelBlocks";
-import BeautifulAndSafe from "./pages/BeautifulAndSafe";
-import Delivery from "./pages/Delivery";
-import PaymentAndDelivery from "./pages/PaymentAndDelivery";
-import FireplaceWarranty from "./pages/FireplaceWarranty";
-import Designers from "./pages/Designers";
-import Answers from "./pages/Answers";
-import Footer from "./pages/Footer";
+
 import ThanksModal from "./components/ThanksModal";
 
 import styles from "./scss/App.module.scss";
@@ -83,12 +70,16 @@ import toplivnySlide3 from "./images/four-tab-modal-img3.jpg";
 import toplivnySlide4 from "./images/four-tab-modal-img4.jpg";
 import toplivnySlide5 from "./images/four-tab-modal-img5.jpg";
 
-import examplePhoto from "./images/swiper-img.jpeg";
-import examplePhoto1 from "./images/swiper-img1.jpeg";
-import examplePhoto2 from "./images/swiper-img2.jpeg";
-import examplePhoto3 from "./images/swiper-img3.jpeg";
-import examplePhoto4 from "./images/swiper-img4.jpeg";
-import examplePhoto5 from "./images/swiper-img5.jpeg";
+import examplePhoto from "./images/swiper-img.webp";
+import examplePhoto1 from "./images/swiper-img1.webp";
+import examplePhoto2 from "./images/swiper-img2.webp";
+import examplePhoto3 from "./images/swiper-img3.webp";
+import examplePhoto4 from "./images/swiper-img4.webp";
+import examplePhoto5 from "./images/swiper-img5.webp";
+import TitlePage from "./pages/TitlePage";
+import Works from "./pages/Works";
+import { BrowserRouter, Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 function App() {
   const [category, setCategory] = useState(0);
@@ -346,6 +337,7 @@ function App() {
 
   const modalCaruselSettings = {
     infinite: true,
+    lazyLoad: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -382,6 +374,7 @@ function App() {
   ];
   const examplesCaruselSettings = {
     infinite: true,
+    lazyLoad: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -440,28 +433,20 @@ function App() {
       }}
     >
       <div className={styles.app}>
-        <HeadPage />
-        <ProductPage />
-        <AboutUs />
-        <WorkExamples />
-        <Reviews />
-        <Quality />
-        <FuelBlocks />
-        <BeautifulAndSafe />
-        <Delivery />
-        <PaymentAndDelivery />
-        <FireplaceWarranty />
-        <Designers />
-        <Answers />
-        <Footer />
-        <CSSTransition
-          in={thanksModalIsOpen}
-          classNames="modal"
-          timeout={600}
-          unmountOnExit
-        >
-          <ThanksModal />
-        </CSSTransition>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<TitlePage />} />
+            <Route path="/works" element={<Works />} />
+          </Routes>
+          <CSSTransition
+            in={thanksModalIsOpen}
+            classNames="modal"
+            timeout={600}
+            unmountOnExit
+          >
+            <ThanksModal />
+          </CSSTransition>
+        </BrowserRouter>
       </div>
     </TilteContext.Provider>
   );

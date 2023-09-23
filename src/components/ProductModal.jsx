@@ -27,7 +27,6 @@ const ProductModal = ({
   useEffect(() => {
     const clickOutside = (e) => {
       if (modalRef.current.contains(e.target)) {
-        console.log(1);
         if (!modalWindowRef.current.contains(e.target)) {
           setModalIndex();
         }
@@ -36,7 +35,7 @@ const ProductModal = ({
     document.addEventListener("click", clickOutside);
     return () => document.removeEventListener("click", clickOutside);
   }, [setModalIndex]);
- 
+
   return (
     <div ref={modalRef} className={styles.container}>
       <div ref={modalWindowRef} className={styles.modalWindow}>
