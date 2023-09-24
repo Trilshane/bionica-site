@@ -78,7 +78,7 @@ import examplePhoto4 from "./images/swiper-img4.webp";
 import examplePhoto5 from "./images/swiper-img5.webp";
 import TitlePage from "./pages/TitlePage";
 import Works from "./pages/Works";
-import { BrowserRouter, Routes } from "react-router-dom";
+import { HashRouter, Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 
 function App() {
@@ -433,7 +433,7 @@ function App() {
       }}
     >
       <div className={styles.app}>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<TitlePage />} />
             <Route path="/works" element={<Works />} />
@@ -446,7 +446,7 @@ function App() {
           >
             <ThanksModal />
           </CSSTransition>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     </TilteContext.Provider>
   );
