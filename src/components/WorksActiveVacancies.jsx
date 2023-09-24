@@ -1,7 +1,7 @@
 import { CSSTransition } from "react-transition-group";
 import styles from "../scss/WorksActiveVacancies.module.scss";
 import FireIconOneLine from "./FireIconOneLine";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import TilteContext from "./Context";
 import VacancyModal from "./VacancyModal";
 import BlackModal from "./BlackModal";
